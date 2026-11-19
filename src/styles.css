@@ -399,6 +399,230 @@ a:focus-visible {
   }
 }
 
+/* ---- Stage 3: The Problem Worth Solving ---- */
+.problem {
+  max-width: 42rem;
+  margin-top: 20px;
+}
+
+@media (min-width: 1024px) {
+  .problem {
+    margin-top: 0;
+  }
+}
+
+.problem__lead {
+  margin: 0;
+  font-size: clamp(1.375rem, 1.15rem + 0.9vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+
+.problem__intro {
+  margin: 16px 0 0;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--body);
+}
+
+@media (min-width: 768px) {
+  .problem__intro {
+    font-size: 1.125rem;
+  }
+}
+
+/* Evidence: three figures, each a number and its sentence. On phones the
+ * number sits beside its sentence; from 640px the three share a row. */
+.evidence {
+  display: grid;
+  gap: 20px;
+  margin: 36px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.evidence__item {
+  display: grid;
+  grid-template-columns: 5.25rem minmax(0, 1fr);
+  align-items: baseline;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 2px solid var(--navy);
+}
+
+.evidence__value {
+  margin: 0;
+  font-size: 2.25rem;
+  font-weight: 650;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.evidence__text {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--body);
+}
+
+@media (min-width: 640px) {
+  .evidence {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .evidence__item {
+    grid-template-columns: none;
+    align-content: start;
+    gap: 10px;
+  }
+
+  .evidence__value {
+    font-size: 2.5rem;
+  }
+}
+
+/* The bar chart: one series, so one colour and no legend; every value is
+ * printed at its bar's tip. Bars are square at the baseline, 4px round at the
+ * tip, 16px thick. */
+.bar-chart {
+  --chart-bar: #3b6fb6;
+
+  margin: 44px 0 0;
+  padding: 18px 16px 20px;
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  background: #fff;
+}
+
+@media (min-width: 640px) {
+  .bar-chart {
+    padding: 22px 24px 24px;
+  }
+}
+
+.bar-chart__caption {
+  display: grid;
+  gap: 2px;
+}
+
+.bar-chart__title {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--ink);
+}
+
+.bar-chart__subtitle {
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.bar-chart__rows {
+  display: grid;
+  gap: 14px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bar-chart__label {
+  display: block;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+.bar-chart__plot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.bar-chart__bar {
+  flex: none;
+  width: calc(var(--value) * 1%);
+  min-width: 2px;
+  height: 16px;
+  border-radius: 0 4px 4px 0;
+  background: var(--chart-bar);
+}
+
+.bar-chart__value {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+/* High-contrast modes drop background colours; keep the bars drawn. */
+@media (forced-colors: active) {
+  .bar-chart__bar {
+    forced-color-adjust: none;
+    background: CanvasText;
+  }
+}
+
+/* Stakeholders: a compact, wrapping flow with arrows. */
+.stakeholders {
+  margin-top: 40px;
+}
+
+.stakeholders__label {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.stakeholders__flow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stakeholders__flow li {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.stakeholders__arrow {
+  color: var(--muted);
+}
+
+.problem__closing {
+  margin: 36px 0 0;
+  padding-left: 16px;
+  border-left: 3px solid var(--teal);
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.problem__source {
+  margin: 24px 0 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
 /* ---- Footer ---- */
 .site-footer {
   border-top: 1px solid var(--hairline);

@@ -1,4 +1,5 @@
 import Pitch from './Pitch';
+import Problem from './Problem';
 import TryItNow from './TryItNow';
 
 /**
@@ -10,6 +11,7 @@ export default function SignalCaseStudy() {
     <>
       <TryItNow />
       <Pitch />
+      <Problem />
     </>
   );
 }

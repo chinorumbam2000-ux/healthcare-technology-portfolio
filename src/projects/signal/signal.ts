@@ -41,6 +41,41 @@ export const PITCH = {
   ],
 } as const;
 
+/**
+ * Stage 3, The Problem Worth Solving. Every statistic comes from the two
+ * ASTP/ONC publications named in `source`; nothing here is a Signal result.
+ */
+export const PROBLEM = {
+  heading: 'The Problem Worth Solving',
+  lead: 'Laboratory data is abundant. Turning it into timely, connected outbreak intelligence is still difficult.',
+  intro:
+    'Clinical laboratories generate large volumes of information that can support disease surveillance, but that data is often distributed across different laboratories, healthcare organizations, information systems, and public-health agencies. Even where electronic reporting is established, technical complexity, onboarding, interoperability, and data-extraction challenges can slow the movement from laboratory result to usable surveillance intelligence.',
+  evidence: [
+    { value: '81%', text: 'of U.S. hospitals reported at least one electronic public-health reporting challenge in 2024.' },
+    { value: '55%', text: 'reported technical complexity with interfaces or data submission.' },
+    { value: '48%', text: 'reported at least one challenge with electronic laboratory reporting.' },
+  ],
+  chart: {
+    title: 'Electronic Public-Health Reporting Challenges — U.S. Hospitals, 2024',
+    subtitle: 'Share of hospitals reporting each challenge',
+    rows: [
+      { label: 'At least one reporting challenge', value: 81 },
+      { label: 'Technical complexity of interfaces/submission', value: 55 },
+      { label: 'Cost challenges', value: 33 },
+      { label: 'Cumbersome onboarding', value: 33 },
+      { label: 'Difficulty extracting information from EHRs', value: 25 },
+    ],
+  },
+  stakeholders: {
+    label: 'Stakeholders',
+    flow: ['Clinical laboratories', 'Healthcare IT & informatics teams', 'Epidemiologists', 'Public-health agencies'],
+  },
+  closing:
+    'Signal explores how a vendor-agnostic sidecar can help turn distributed laboratory data into more timely, actionable outbreak intelligence without replacing existing clinical systems.',
+  source:
+    'Sources: ASTP/ONC, Laboratory Interoperability Through Health Information Exchange Organizations (2024); ASTP/ONC, Electronic Public Health Reporting Among Non-Federal Acute Care Hospitals, 2024.',
+} as const;
+
 /** The hero screenshot: a real capture of the live prototype. */
 export const DASHBOARD_SHOT = {
   width: 2880,
