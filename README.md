@@ -13,6 +13,7 @@ and is not part of this one. This site links to it.
 The Signal case study is built one approved stage at a time.
 
 - Stage 1, Try It Now: the live application, the source code and how to sign in to the demo.
+- Stage 2, The Pitch: what Signal is, what the prototype shows, and my role.
 
 ## Structure
 
@@ -27,6 +28,7 @@ src/
       signal.ts           its links and copy
       SignalCaseStudy.tsx its sections, in page order
       TryItNow.tsx        Stage 1
+      Pitch.tsx           Stage 2
   __tests__/
 ```
 

@@ -59,19 +59,21 @@ describe('Stage 1: Try It Now', () => {
     expect(screen.getByText('The Signal Dashboard in the live prototype, on Scenario Replay Day 5.')).toBeTruthy();
   });
 
-  it('contains Stage 1 only: one h1, the Demo access h2, and no later portfolio section', () => {
+  it('contains Stages 1 and 2 only: the h1, Demo access, The Pitch, and no later portfolio section', () => {
     expect(screen.getAllByRole('heading').map((h) => `${h.tagName}:${h.textContent}`)).toEqual([
       'H1:Signal by ProbeSyQ — Outbreak Intelligence',
       'H2:Demo access',
+      'H2:The Pitch',
     ]);
     const text = document.body.textContent ?? '';
     for (const later of [
-      'The Pitch', 'Problem Worth Solving', 'Why Now', 'Architecture', 'Tech Stack', 'Demo Video', 'Proof It Works',
+      'Problem Worth Solving', 'Why Now', 'Architecture', 'Tech Stack', 'Demo Video', 'Proof It Works',
       'Responsible AI', 'Business Impact', 'Roadmap', 'About Me', 'Reflection', 'Sources', 'AI Use Disclosure',
     ]) {
       expect(text).not.toContain(later);
     }
-    expect(screen.getAllByRole('region')).toHaveLength(2); // the hero and Demo access
+    // The hero, Demo access, and The Pitch.
+    expect(screen.getAllByRole('region').map((r) => r.getAttribute('aria-labelledby'))).toEqual(['signal-title', 'demo-access-title', 'pitch-title']);
   });
 
   it('has no unfilled placeholders', () => {

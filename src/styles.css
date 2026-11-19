@@ -335,6 +335,70 @@ a:focus-visible {
   color: var(--muted);
 }
 
+/* ---- Case-study sections (Stage 2 onward) ----
+ * Heading above the text on small screens; beside it, in a narrow left
+ * column, from 1024px. The text column keeps a comfortable reading measure. */
+.case-section {
+  border-top: 1px solid var(--hairline);
+  padding-block: 56px 64px;
+}
+
+@media (min-width: 768px) {
+  .case-section {
+    padding-block: 72px 80px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .case-section {
+    padding-block: 88px 96px;
+  }
+
+  .case-section__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr);
+    gap: 48px;
+    align-items: start;
+  }
+}
+
+.case-section__title {
+  margin: 0;
+  font-size: clamp(1.625rem, 1.3rem + 1.2vw, 2.125rem);
+  font-weight: 650;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.case-section__body {
+  max-width: 42rem;
+  margin-top: 20px;
+}
+
+@media (min-width: 1024px) {
+  .case-section__body {
+    margin-top: 0;
+  }
+}
+
+.case-section__body p {
+  margin: 0;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--body);
+}
+
+.case-section__body p + p {
+  margin-top: 1.25em;
+}
+
+@media (min-width: 768px) {
+  .case-section__body p {
+    font-size: 1.125rem;
+  }
+}
+
 /* ---- Footer ---- */
 .site-footer {
   border-top: 1px solid var(--hairline);
