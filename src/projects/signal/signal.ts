@@ -76,6 +76,69 @@ export const PROBLEM = {
     'Sources: ASTP/ONC, Laboratory Interoperability Through Health Information Exchange Organizations (2024); ASTP/ONC, Electronic Public Health Reporting Among Non-Federal Acute Care Hospitals, 2024.',
 } as const;
 
+/**
+ * Stage 4, Why Now. It keeps three things apart: today's public-health
+ * infrastructure (the landscape), the working prototype, and Signal's intended
+ * place beside that infrastructure (where Signal fits).
+ */
+export const WHY_NOW = {
+  heading: 'Why Now',
+  lead: 'Public-health data modernization, healthcare AI adoption, and demand for health-information expertise are accelerating at the same time.',
+  intro:
+    'Signal was developed at a time when healthcare and public-health organizations are investing heavily in faster data exchange, interoperable systems, advanced analytics, and responsible AI. Existing surveillance infrastructure is becoming more connected, while healthcare organizations increasingly need professionals who can work across clinical systems, data, interoperability, analytics, and emerging AI technologies.',
+  evidence: [
+    {
+      value: '71%',
+      unit: '',
+      text: 'of U.S. non-federal acute care hospitals reported using predictive AI integrated with their EHR in 2024, up from 66% in 2023.',
+      source: 'ASTP/ONC, Hospital Trends in the Use, Evaluation, and Governance of Predictive AI, 2023–2024.',
+    },
+    {
+      value: '16%',
+      unit: '',
+      text: 'projected employment growth for health information technologists and medical registrars from 2025 to 2035, compared with 3% for all occupations.',
+      source: 'U.S. Bureau of Labor Statistics, Occupational Outlook Handbook.',
+    },
+    {
+      value: '12',
+      unit: 'facilities',
+      text: 'were already submitting critical hospital data to CDC through automated FHIR-based exchange, exceeding CDC’s 2025 target of 10 facilities.',
+      source: 'CDC Public Health Data Strategy.',
+    },
+  ],
+  landscape: {
+    heading: 'A growing surveillance ecosystem',
+    entries: [
+      {
+        name: 'NSSP / BioSense',
+        text: 'Near-real-time syndromic surveillance infrastructure that receives data from thousands of healthcare facilities and supports early detection and monitoring.',
+      },
+      {
+        name: 'NBS',
+        text: 'CDC-developed disease-surveillance infrastructure that supports reportable-disease workflows, case investigation, electronic laboratory reporting, and standards-based exchange.',
+      },
+      {
+        name: 'CDC Public Health Data Strategy / 1CDP',
+        text: 'Ongoing modernization focused on integrated data, faster exchange, reusable analytics, FHIR adoption, and reducing siloed public-health data systems.',
+      },
+    ],
+  },
+  fit: {
+    heading: 'Where Signal fits',
+    flow: ['Healthcare & laboratory systems', 'Signal sidecar', 'Public-health surveillance ecosystem'],
+    /** The flow step that is Signal itself. */
+    signalStep: 1,
+    claim: 'Complement, not replacement.',
+    text: 'Signal does not aim to replace national, state, or jurisdictional surveillance platforms. It explores a complementary, vendor-agnostic sidecar approach that can sit closer to the laboratory and healthcare-system level, transform routine laboratory data into surveillance signals, and support standards-based exchange with broader public-health infrastructure.',
+  },
+  ai: {
+    heading: 'AI is changing the work—but governance matters',
+    text: 'In 2024, predictive AI was already integrated into the EHR environment at 71% of U.S. non-federal acute care hospitals. Adoption is increasing, but so is the expectation that healthcare organizations evaluate AI for accuracy, bias, and performance after implementation. For Signal, this reinforces a design principle used throughout the project: AI should support surveillance and analysis without replacing human review, validation, or accountable decision-making.',
+  },
+  source:
+    'Sources: ASTP/ONC, Hospital Trends in the Use, Evaluation, and Governance of Predictive AI, 2023–2024; U.S. Bureau of Labor Statistics, Occupational Outlook Handbook; CDC Public Health Data Strategy; CDC National Syndromic Surveillance Program; CDC National Electronic Disease Surveillance System Base System.',
+} as const;
+
 /** The hero screenshot: a real capture of the live prototype. */
 export const DASHBOARD_SHOT = {
   width: 2880,

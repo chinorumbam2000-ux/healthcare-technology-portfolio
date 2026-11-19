@@ -1,6 +1,7 @@
 import Pitch from './Pitch';
 import Problem from './Problem';
 import TryItNow from './TryItNow';
+import WhyNow from './WhyNow';
 
 /**
  * The Signal by ProbeSyQ capstone case study. Sections are added here, in
@@ -12,6 +13,7 @@ export default function SignalCaseStudy() {
       <TryItNow />
       <Pitch />
       <Problem />
+      <WhyNow />
     </>
   );
 }

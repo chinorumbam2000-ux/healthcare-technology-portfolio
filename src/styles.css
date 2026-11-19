@@ -623,6 +623,224 @@ a:focus-visible {
   color: var(--muted);
 }
 
+/* ---- Stage 4: Why Now ---- */
+.why-now {
+  max-width: 42rem;
+  margin-top: 20px;
+}
+
+@media (min-width: 1024px) {
+  .why-now {
+    margin-top: 0;
+  }
+}
+
+.why-now__lead {
+  margin: 0;
+  font-size: clamp(1.375rem, 1.15rem + 0.9vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+
+.why-now__intro,
+.why-now__text {
+  margin: 16px 0 0;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--body);
+}
+
+@media (min-width: 768px) {
+  .why-now__intro,
+  .why-now__text {
+    font-size: 1.125rem;
+  }
+}
+
+/* Evidence variant for values with a unit ("12 facilities"): the number sits
+ * above its sentence at every width, and each callout names its source. */
+.evidence--stacked .evidence__item {
+  grid-template-columns: none;
+  align-content: start;
+  gap: 10px;
+}
+
+.evidence__unit {
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.evidence__source {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.why-now__subhead {
+  margin: 0;
+  font-size: 1.1875rem;
+  font-weight: 650;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.why-now__landscape,
+.why-now__fit,
+.why-now__ai {
+  margin-top: 48px;
+}
+
+/* The landscape: three named entries, the name beside its description from 640px. */
+.landscape {
+  margin: 14px 0 0;
+}
+
+.landscape__entry {
+  padding-block: 14px;
+  border-top: 1px solid var(--hairline);
+}
+
+.landscape__entry:last-child {
+  border-bottom: 1px solid var(--hairline);
+}
+
+.landscape__entry dt {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.landscape__entry dd {
+  margin: 4px 0 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--body);
+}
+
+@media (min-width: 640px) {
+  .landscape__entry {
+    display: grid;
+    grid-template-columns: 11rem minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .landscape__entry dd {
+    margin-top: 0;
+  }
+}
+
+/* Where Signal fits: three labelled steps joined by arrows. A column on
+ * phones (arrows point down), a row from 768px. Signal's step is filled navy
+ * and keeps its own label, so colour is never the only cue. */
+.fit-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fit-flow__step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.fit-flow__arrow {
+  flex: none;
+  color: var(--muted);
+  transform: rotate(90deg);
+}
+
+.fit-flow__node {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 52px;
+  padding: 10px 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background: #fff;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.35;
+  text-align: center;
+  color: var(--ink);
+}
+
+.fit-flow__node--signal {
+  border-color: var(--navy);
+  background: var(--navy);
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .fit-flow {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .fit-flow__step {
+    flex: 1 1 0;
+    flex-direction: row;
+    min-width: 0;
+    gap: 8px;
+  }
+
+  /* Steps after the first also hold an arrow (16px + 8px gap); starting them
+   * that much wider leaves the three boxes equal. */
+  .fit-flow__step + .fit-flow__step {
+    flex-basis: 24px;
+  }
+
+  .fit-flow__arrow {
+    transform: none;
+  }
+
+  .fit-flow__node {
+    height: 100%;
+  }
+}
+
+@media (forced-colors: active) {
+  .fit-flow__node--signal {
+    border-width: 3px;
+  }
+}
+
+.why-now__claim {
+  margin: 20px 0 0;
+  font-size: 1.25rem;
+  font-weight: 650;
+  line-height: 1.35;
+  color: var(--ink);
+}
+
+.why-now__fit .why-now__claim + .why-now__text {
+  margin-top: 8px;
+}
+
+.why-now__ai .why-now__text {
+  margin-top: 10px;
+}
+
+.why-now__source {
+  margin: 40px 0 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
 /* ---- Footer ---- */
 .site-footer {
   border-top: 1px solid var(--hairline);
