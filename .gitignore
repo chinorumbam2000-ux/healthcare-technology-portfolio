@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+.vite/
+
+# Local environment files
+.env
+.env.*
+*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# Test output
+coverage/
+
+# TypeScript incremental build cache
+*.tsbuildinfo
+
+# Editor and OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.code-workspace
