@@ -44,7 +44,7 @@ describe('Stage 3: The Problem Worth Solving', () => {
   });
 
   it('charts exactly the five requested values, each labelled, with bars sized to match', () => {
-    const chart = within(section()).getByRole('figure', { name: 'Electronic Public-Health Reporting Challenges — U.S. Hospitals, 2024' });
+    const chart = within(section()).getByRole('figure', { name: 'Electronic Public-Health Reporting Challenges — U.S. Non-Federal Acute Care Hospitals, 2024' });
     const rows = within(chart).getAllByRole('listitem');
     expect(rows.map((li) => [li.querySelector('.bar-chart__label')?.textContent, li.querySelector('.bar-chart__value')?.textContent])).toEqual([
       ['At least one reporting challenge', '81%'],

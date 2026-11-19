@@ -56,7 +56,7 @@ export const PROBLEM = {
     { value: '48%', text: 'reported at least one challenge with electronic laboratory reporting.' },
   ],
   chart: {
-    title: 'Electronic Public-Health Reporting Challenges — U.S. Hospitals, 2024',
+    title: 'Electronic Public-Health Reporting Challenges — U.S. Non-Federal Acute Care Hospitals, 2024',
     subtitle: 'Share of hospitals reporting each challenge',
     rows: [
       { label: 'At least one reporting challenge', value: 81 },
