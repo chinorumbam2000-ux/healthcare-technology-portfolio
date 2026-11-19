@@ -59,7 +59,7 @@ describe('Stage 1: Try It Now', () => {
     expect(screen.getByText('The Signal Dashboard in the live prototype, on Scenario Replay Day 5.')).toBeTruthy();
   });
 
-  it('contains Stages 1–4 only: their headings, and no later section', () => {
+  it('contains Stages 1–5 only: their headings, and no later section', () => {
     expect(screen.getAllByRole('heading').map((h) => `${h.tagName}:${h.textContent}`)).toEqual([
       'H1:Signal by ProbeSyQ — Outbreak Intelligence',
       'H2:Demo access',
@@ -69,20 +69,27 @@ describe('Stage 1: Try It Now', () => {
       'H3:A growing surveillance ecosystem',
       'H3:Where Signal fits',
       'H3:AI is changing the work—but governance matters',
+      'H2:How I Built Signal',
+      'H3:Technology stack',
+      'H3:Key design decisions',
+      'H4:Sidecar, not replacement',
+      'H4:Synthetic data for the public prototype',
+      'H4:Interpretable surveillance first',
+      'H4:Vendor-neutral interoperability',
+      'H4:Prototype first, production architecture next',
     ]);
     // Later sections' names, as they would appear as headings (case-sensitive:
     // Stage 4's intro mentions "responsible AI" in running text).
     const text = document.body.textContent ?? '';
     for (const later of [
-      'How Signal Was Built', 'Architecture', 'Tech Stack', 'Demo Video', 'Proof It Works',
-      'Responsible AI', 'Business Impact', 'Roadmap', 'About Me', 'Reflection', 'AI Use Disclosure',
+      'Demo Video', 'Proof It Works', 'Responsible AI', 'Business Impact', 'Roadmap', 'About Me', 'Reflection', 'AI Use Disclosure',
     ]) {
       expect(text).not.toContain(later);
     }
     // "Sources:" opens Stage 3's and Stage 4's attribution lines; a Sources section would be a heading.
     expect(screen.queryByRole('heading', { name: /^Sources/ })).toBeNull();
     expect(screen.getAllByRole('region').map((r) => r.getAttribute('aria-labelledby'))).toEqual([
-      'signal-title', 'demo-access-title', 'pitch-title', 'problem-title', 'why-now-title',
+      'signal-title', 'demo-access-title', 'pitch-title', 'problem-title', 'why-now-title', 'built-title',
     ]);
   });
 

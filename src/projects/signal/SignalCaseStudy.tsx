@@ -1,3 +1,4 @@
+import HowIBuilt from './HowIBuilt';
 import Pitch from './Pitch';
 import Problem from './Problem';
 import TryItNow from './TryItNow';
@@ -14,6 +15,7 @@ export default function SignalCaseStudy() {
       <Pitch />
       <Problem />
       <WhyNow />
+      <HowIBuilt />
     </>
   );
 }

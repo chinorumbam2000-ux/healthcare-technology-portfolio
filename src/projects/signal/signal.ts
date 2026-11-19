@@ -139,6 +139,85 @@ export const WHY_NOW = {
     'Sources: ASTP/ONC, Hospital Trends in the Use, Evaluation, and Governance of Predictive AI, 2023–2024; U.S. Bureau of Labor Statistics, Occupational Outlook Handbook; CDC Public Health Data Strategy; CDC National Syndromic Surveillance Program; CDC National Electronic Disease Surveillance System Base System.',
 } as const;
 
+/**
+ * Stage 5, How I Built Signal. The flow is the intended production
+ * architecture; the public prototype is a static site on synthetic data. Every
+ * technology named here is in the Signal repository (frontend in src/, the
+ * FastAPI + PostgreSQL backend in backend/).
+ */
+export const BUILT = {
+  heading: 'How I Built Signal',
+  lead: 'Signal was designed as a vendor-agnostic sidecar so it could add outbreak-intelligence capabilities without requiring an organization to replace its existing clinical systems.',
+  flow: [
+    'Laboratory & EHR systems',
+    'HL7 v2 / FHIR interoperability',
+    'Signal by ProbeSyQ sidecar',
+    'Surveillance & analytics',
+    'Early-warning intelligence',
+  ],
+  /** The flow step that is Signal itself. */
+  signalStep: 2,
+  caption:
+    'Intended production architecture: Signal sits alongside existing clinical systems and uses standards-based interoperability to move laboratory data into a dedicated surveillance workflow.',
+  explanation:
+    'Rather than building another laboratory information system or electronic health record, I designed Signal as a sidecar application. The goal is to preserve the systems organizations already use while adding a separate layer for surveillance, analytics, geographic intelligence, signal review, and outbreak investigation. Standards such as HL7 v2 and FHIR provide the interoperability path, while laboratory terminology such as LOINC supports consistent representation of laboratory observations.',
+  stack: {
+    heading: 'Technology stack',
+    entries: [
+      { area: 'Frontend', tech: 'React · TypeScript · Vite', text: 'Interactive application interface, surveillance views, routing and responsive user experience.' },
+      { area: 'Backend', tech: 'FastAPI · Python', text: 'API architecture for health checks, data services and future interoperability workflows.' },
+      {
+        area: 'Data layer',
+        tech: 'PostgreSQL · SQLAlchemy · Alembic',
+        text: 'Structured architecture for facilities, laboratory observations, surveillance signals and audit events.',
+      },
+      {
+        area: 'Interoperability',
+        tech: 'HL7 v2 · FHIR · LOINC',
+        text: 'Standards and terminology used to shape the intended flow of clinical laboratory information into Signal.',
+      },
+      { area: 'Deployment', tech: 'GitHub Pages · GitHub Actions', text: 'Public frontend deployment and automated build workflow.' },
+      {
+        area: 'Quality & testing',
+        tech: 'Vitest · browser testing · accessibility testing · TypeScript type checking',
+        text: 'Used to verify application behaviour, routing, responsive layouts, accessibility and build integrity.',
+      },
+    ],
+  },
+  decisions: {
+    heading: 'Key design decisions',
+    items: [
+      {
+        title: 'Sidecar, not replacement',
+        decision: 'Design Signal to complement existing LIS and EHR infrastructure.',
+        why: 'Replacing core clinical systems would create unnecessary disruption, cost and vendor dependence. The sidecar model keeps Signal focused on surveillance intelligence.',
+      },
+      {
+        title: 'Synthetic data for the public prototype',
+        decision: 'Use synthetic laboratory and surveillance data.',
+        why: 'It allows the complete workflow to be demonstrated publicly without exposing patient information or connecting to a real healthcare organization.',
+      },
+      {
+        title: 'Interpretable surveillance first',
+        decision:
+          'Keep the core surveillance logic transparent and reviewable rather than making outbreak detection dependent on an opaque AI model.',
+        why: 'Public-health signals should be understandable, auditable and subject to human review.',
+      },
+      {
+        title: 'Vendor-neutral interoperability',
+        decision:
+          "Base the architecture on standards such as HL7 v2, FHIR and LOINC rather than a single vendor's proprietary ecosystem.",
+        why: 'The long-term goal is for Signal to work across different laboratory and EHR environments.',
+      },
+      {
+        title: 'Prototype first, production architecture next',
+        decision: 'Prioritize a working, testable public prototype while building the backend and database architecture incrementally.',
+        why: 'This allowed the core surveillance experience and product concept to be validated before investing in production-scale integration.',
+      },
+    ],
+  },
+} as const;
+
 /** The hero screenshot: a real capture of the live prototype. */
 export const DASHBOARD_SHOT = {
   width: 2880,

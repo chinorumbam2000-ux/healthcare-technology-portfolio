@@ -16,6 +16,7 @@ The Signal case study is built one approved stage at a time.
 - Stage 2, The Pitch: what Signal is, what the prototype shows, and my role.
 - Stage 3, The Problem Worth Solving: the evidence (ASTP/ONC, 2024), a bar chart, the stakeholders and the motivation.
 - Stage 4, Why Now: the evidence, today's surveillance landscape, where Signal fits, and AI governance.
+- Stage 5, How I Built Signal: the intended architecture, the technology stack and the key design decisions.
 
 ## Structure
 
@@ -33,6 +34,7 @@ src/
       Pitch.tsx           Stage 2
       Problem.tsx         Stage 3
       WhyNow.tsx          Stage 4
+      HowIBuilt.tsx       Stage 5
   __tests__/
 ```
 
