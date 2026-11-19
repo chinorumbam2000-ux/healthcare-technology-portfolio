@@ -37,7 +37,7 @@ describe('Stage 3: The Problem Worth Solving', () => {
       li.querySelector('.evidence__value')?.textContent,
       li.querySelector('.evidence__text')?.textContent,
     ])).toEqual([
-      ['81%', 'of U.S. hospitals reported at least one electronic public-health reporting challenge in 2024.'],
+      ['81%', 'of U.S. non-federal acute care hospitals reported at least one electronic public-health reporting challenge in 2024.'],
       ['55%', 'reported technical complexity with interfaces or data submission.'],
       ['48%', 'reported at least one challenge with electronic laboratory reporting.'],
     ]);

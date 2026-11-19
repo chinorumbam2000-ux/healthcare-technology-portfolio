@@ -51,7 +51,7 @@ export const PROBLEM = {
   intro:
     'Clinical laboratories generate large volumes of information that can support disease surveillance, but that data is often distributed across different laboratories, healthcare organizations, information systems, and public-health agencies. Even where electronic reporting is established, technical complexity, onboarding, interoperability, and data-extraction challenges can slow the movement from laboratory result to usable surveillance intelligence.',
   evidence: [
-    { value: '81%', text: 'of U.S. hospitals reported at least one electronic public-health reporting challenge in 2024.' },
+    { value: '81%', text: 'of U.S. non-federal acute care hospitals reported at least one electronic public-health reporting challenge in 2024.' },
     { value: '55%', text: 'reported technical complexity with interfaces or data submission.' },
     { value: '48%', text: 'reported at least one challenge with electronic laboratory reporting.' },
   ],
