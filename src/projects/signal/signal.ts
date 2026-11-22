@@ -390,6 +390,130 @@ export const RESPONSIBLE_AI = {
   },
 } as const;
 
+/**
+ * Stage 9, Business Impact & What's Next. Keeps four things apart: potential
+ * value (not achieved anywhere), what implementation would require (no cost
+ * figures: none has been established), the proposed adoption path and roadmap
+ * (future, none of it done), and what the prototype is today (its limitations).
+ */
+export const BUSINESS = {
+  heading: 'Business Impact & What’s Next',
+  lead: 'Signal’s potential value comes from helping organizations make better use of laboratory data they already generate, without requiring them to replace the clinical systems they already depend on.',
+  value: {
+    heading: 'Potential organizational value',
+    items: [
+      {
+        title: 'Earlier surveillance visibility',
+        text: 'Signal is designed to bring laboratory activity, surveillance profiles, analytics and active signals into one focused environment, helping surveillance teams identify patterns that may warrant attention earlier in the review process.',
+      },
+      {
+        title: 'Better use of existing laboratory data',
+        text: 'Routine laboratory data already generated during patient care can also contribute to population-level surveillance. Signal explores how that information can be organized into a dedicated outbreak-intelligence workflow rather than remaining useful only at the individual-result level.',
+      },
+      {
+        title: 'Lower-disruption integration model',
+        text: 'Because Signal is designed as a sidecar, organizations would not need to replace their existing LIS or EHR simply to add the surveillance layer. Standards-based integration is intended to reduce dependence on a single clinical-system vendor.',
+      },
+      {
+        title: 'More structured investigation',
+        text: 'Signals, supporting indicators, geography, analytics and investigation status are brought into one workflow so that users can move from detection to review without relying entirely on disconnected reports or manual interpretation.',
+      },
+    ],
+  },
+  cost: {
+    heading: 'What implementation would cost',
+    intro:
+      'Signal is currently a prototype, so a real implementation cost has not been established. The major cost drivers would come from integration, infrastructure, validation, security, governance and ongoing support rather than from the public prototype itself.',
+    areas: [
+      {
+        area: 'Integration',
+        text: 'Interface development, data mapping, terminology mapping, FHIR or HL7 v2 configuration, and testing with each participating clinical system.',
+      },
+      { area: 'Infrastructure', text: 'Secure hosting, database services, monitoring, backups, networking and production availability requirements.' },
+      {
+        area: 'Security & compliance',
+        text: 'Identity and access management, encryption, audit logging, privacy review, security assessment and organization-specific compliance work.',
+      },
+      {
+        area: 'Validation',
+        text: 'Clinical and public-health validation, data-quality evaluation, workflow testing and performance monitoring before operational use.',
+      },
+      { area: 'Operations', text: 'Training, user support, interface maintenance, surveillance-profile maintenance and ongoing system monitoring.' },
+    ],
+  },
+  path: {
+    heading: 'A phased adoption path',
+    phases: [
+      { name: 'Connect', text: 'Establish a standards-based interface with one laboratory or healthcare environment using a limited data scope.' },
+      {
+        name: 'Validate',
+        text: 'Compare Signal’s outputs with existing surveillance workflows using historical, synthetic or approved real-world data under appropriate governance.',
+      },
+      {
+        name: 'Pilot',
+        text: 'Run Signal in a limited operational setting with human review, defined users, clear escalation rules and measurable success criteria.',
+      },
+      {
+        name: 'Scale',
+        text: 'Expand to additional facilities, disease and syndrome profiles, interfaces and public-health integrations after validation and governance approval.',
+      },
+    ],
+  },
+  limitations: {
+    heading: 'Current limitations',
+    items: [
+      { title: 'Synthetic data', text: 'The public prototype does not use real patient or production laboratory data.' },
+      {
+        title: 'No live production integration',
+        text: 'The public application is not connected to a real LIS, EHR, hospital, laboratory or public-health agency.',
+      },
+      {
+        title: 'No clinical validation',
+        text: 'Signal has not been validated for real-world outbreak detection or operational public-health decision-making.',
+      },
+      {
+        title: 'Prototype-scale surveillance',
+        text: 'The current application demonstrates selected disease and syndrome profiles and a controlled surveillance scenario rather than production-scale regional or national surveillance.',
+      },
+      {
+        title: 'Development-stage backend',
+        text: 'The backend, database and interoperability architecture are still being developed toward a production-capable implementation.',
+      },
+    ],
+  },
+  roadmap: {
+    heading: 'Next version roadmap',
+    items: [
+      {
+        title: 'Real standards-based ingestion',
+        text: 'Extend the existing interoperability work into controlled ingestion from approved FHIR and HL7 v2 test environments.',
+      },
+      {
+        title: 'Broader surveillance profiles',
+        text: 'Expand configurable disease and syndrome monitoring while maintaining transparent surveillance logic and human review.',
+      },
+      {
+        title: 'Stronger geographic intelligence',
+        text: 'Develop deeper geographic and facility-level analysis for comparing emerging patterns across locations.',
+      },
+      {
+        title: 'Validation framework',
+        text: 'Establish formal evaluation methods for data quality, surveillance performance, bias, usability and workflow impact before real-world use.',
+      },
+      {
+        title: 'Security and governance',
+        text: 'Strengthen authentication, authorization, audit logging, deployment security, privacy controls and governance requirements for production environments.',
+      },
+      {
+        title: 'Pilot readiness',
+        text: 'Prepare Signal for a limited, partner-approved pilot only after technical validation, privacy and security review, and defined operational success criteria.',
+      },
+    ],
+  },
+  closing:
+    'The next milestone is not to make Signal more autonomous. It is to make the system more connected, validated, secure and useful to the people responsible for surveillance decisions.',
+} as const;
+
 /** The hero screenshot: a real capture of the live prototype. */
 export const DASHBOARD_SHOT = {
   width: 2880,

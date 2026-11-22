@@ -1849,6 +1849,335 @@ a:focus-visible {
   }
 }
 
+/* ---- Stage 9: Business Impact & What's Next ----
+ * From 1024px: heading | lead on the first row, value and cost in the text
+ * column, the adoption path across the full content width, then limitations,
+ * roadmap and the closing statement in the text column. */
+.biz__lead,
+.biz__first,
+.biz__more {
+  max-width: 42rem;
+}
+
+.biz__lead {
+  margin: 20px 0 0;
+  font-size: clamp(1.375rem, 1.15rem + 0.9vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+
+.biz__first {
+  margin-top: 8px;
+}
+
+.biz__block {
+  margin-top: 40px;
+}
+
+.biz__block--first {
+  margin-top: 0;
+}
+
+.biz__more {
+  margin-top: 44px;
+}
+
+.biz__subhead {
+  margin: 0;
+  font-size: 1.1875rem;
+  font-weight: 650;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.biz__intro {
+  margin: 10px 0 0;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--body);
+}
+
+/* Potential organizational value: four compact areas, two by two from 640px. */
+.biz-values {
+  display: grid;
+  gap: 22px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.biz-value {
+  padding-top: 12px;
+  border-top: 2px solid var(--navy);
+}
+
+.biz-value__title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+.biz-value__text {
+  margin: 6px 0 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--body);
+}
+
+@media (min-width: 640px) {
+  .biz-values {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 28px;
+  }
+}
+
+/* Cost drivers and limitations: compact rows, the name above its text on
+ * phones and beside it from 640px. */
+.biz-rows {
+  margin: 14px 0 0;
+}
+
+.biz-rows__row {
+  display: grid;
+  gap: 4px;
+  padding-block: 13px;
+  border-top: 1px solid var(--hairline);
+}
+
+.biz-rows__row:last-child {
+  border-bottom: 1px solid var(--hairline);
+}
+
+.biz-rows__row dt {
+  font-size: 0.9375rem;
+  font-weight: 650;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.biz-rows__row dd {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--body);
+}
+
+@media (min-width: 640px) {
+  .biz-rows__row {
+    grid-template-columns: 13rem minmax(0, 1fr);
+    gap: 20px;
+    align-items: baseline;
+  }
+}
+
+/* A phased adoption path: four numbered phases joined by a line. A vertical
+ * timeline on phones and tablets; one row from 1024px. Every phase is drawn
+ * alike (outlined marker, no check marks) because none has happened yet. The
+ * connecting line is a border, so it stays drawn in forced-colours modes. */
+.biz-path {
+  margin: 44px 0 0;
+  padding: 20px 16px 22px;
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  background: var(--canvas);
+}
+
+.phases {
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.phase {
+  position: relative;
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  align-content: start;
+  column-gap: 16px;
+  padding-bottom: 24px;
+}
+
+.phase:last-child {
+  padding-bottom: 0;
+}
+
+.phase:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 46px;
+  bottom: 6px;
+  left: 19px;
+  border-left: 2px solid var(--line-strong);
+}
+
+.phase__marker {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--navy);
+  border-radius: 50%;
+  background: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--navy);
+  font-variant-numeric: tabular-nums;
+}
+
+.phase__body {
+  padding-top: 1px;
+}
+
+.phase__title {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 650;
+  line-height: 1.3;
+  color: var(--ink);
+}
+
+.phase__step {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 0.8125rem;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.phase__text {
+  margin: 6px 0 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--body);
+}
+
+@media (min-width: 640px) {
+  .biz-path {
+    padding: 22px 20px 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .biz-grid {
+    row-gap: 40px;
+  }
+
+  .biz-grid > .biz__lead,
+  .biz-grid > .biz__first,
+  .biz-grid > .biz__more {
+    grid-column: 2;
+    margin-top: 0;
+  }
+
+  .biz-grid > .biz__first > .biz__block:first-child {
+    margin-top: 0;
+  }
+
+  .biz-grid > .biz-path {
+    grid-column: 1 / -1;
+    margin-top: 0;
+    padding: 26px 24px 28px;
+  }
+
+  .phases {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 28px;
+  }
+
+  .phase {
+    grid-template-columns: none;
+    row-gap: 14px;
+    padding-bottom: 0;
+  }
+
+  /* The line runs from this marker to the next one, across the 28px gap. */
+  .phase:not(:last-child)::after {
+    top: 19px;
+    right: -20px;
+    bottom: auto;
+    left: 48px;
+    border-left: 0;
+    border-top: 2px solid var(--line-strong);
+  }
+}
+
+/* Next version roadmap: six numbered priorities, in order. */
+.roadmap {
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.roadmap__item {
+  padding-block: 14px;
+  border-top: 1px solid var(--hairline);
+}
+
+.roadmap__item:last-child {
+  border-bottom: 1px solid var(--hairline);
+}
+
+.roadmap__title {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+.roadmap__num {
+  flex: none;
+  min-width: 1.5rem;
+  padding: 1px 0;
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+  color: var(--navy);
+  font-variant-numeric: tabular-nums;
+}
+
+.roadmap__text {
+  margin: 6px 0 0 calc(1.5rem + 10px);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--body);
+}
+
+/* The closing statement: set apart and weighted, smaller than the lead. */
+.biz__closing {
+  margin: 44px 0 0;
+  padding-top: 18px;
+  border-top: 2px solid var(--navy);
+  font-size: 1.1875rem;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+
+@media (min-width: 768px) {
+  .biz__closing {
+    font-size: 1.3125rem;
+  }
+}
+
 /* ---- Footer ---- */
 .site-footer {
   border-top: 1px solid var(--hairline);

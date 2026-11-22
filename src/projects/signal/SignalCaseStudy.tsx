@@ -1,3 +1,4 @@
+import BusinessImpact from './BusinessImpact';
 import HowIBuilt from './HowIBuilt';
 import Pitch from './Pitch';
 import Problem from './Problem';
@@ -22,6 +23,7 @@ export default function SignalCaseStudy() {
       <SeeItInAction />
       <ProofItWorks />
       <ResponsibleAI />
+      <BusinessImpact />
     </>
   );
 }
