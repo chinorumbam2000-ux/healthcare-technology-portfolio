@@ -1518,6 +1518,337 @@ a:focus-visible {
   }
 }
 
+/* ---- Stage 8: Responsible AI ----
+ * From 1024px: heading | lead and intro on the first row, the five areas in
+ * the text column, the human-review flow across the full content width, then
+ * the risk-control summary and the governance note in the text column. */
+.rai__opening,
+.rai-areas,
+.rai__more {
+  max-width: 42rem;
+}
+
+.rai__opening {
+  margin-top: 20px;
+}
+
+.rai__lead {
+  margin: 0;
+  font-size: clamp(1.375rem, 1.15rem + 0.9vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+
+.rai__intro {
+  margin: 16px 0 0;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--body);
+}
+
+@media (min-width: 768px) {
+  .rai__intro {
+    font-size: 1.125rem;
+  }
+}
+
+/* The five areas: each a short heading and its paragraph, between hairlines. */
+.rai-areas {
+  margin: 36px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rai-area {
+  padding-block: 18px;
+  border-top: 1px solid var(--hairline);
+}
+
+.rai-area:first-child {
+  padding-top: 14px;
+  border-top: 2px solid var(--navy);
+}
+
+.rai-area:last-child {
+  border-bottom: 1px solid var(--hairline);
+}
+
+.rai-area__title {
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 650;
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+.rai-area__text {
+  margin: 6px 0 0;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--body);
+}
+
+/* Human-reviewed surveillance by design: five labelled steps joined by
+ * arrows. A column on phones and tablets (arrows point down), a row from
+ * 1024px. The two human steps are filled navy AND carry a "Human step" tag
+ * with a person icon, so colour is never the only cue. */
+.rai-figure {
+  margin: 44px 0 0;
+  padding: 18px 16px 20px;
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  background: var(--canvas);
+}
+
+.rai-figure__title {
+  margin: 0 0 16px;
+  font-size: 0.8125rem;
+  font-weight: 650;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.rai-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 28rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rai-flow__step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.rai-flow__arrow {
+  flex: none;
+  color: var(--muted);
+  transform: rotate(90deg);
+}
+
+.rai-flow__node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 100%;
+  min-height: 52px;
+  padding: 10px 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background: #fff;
+  text-align: center;
+}
+
+.rai-flow__label {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--ink);
+}
+
+.rai-flow__node--human {
+  border-color: var(--navy);
+  background: var(--navy);
+}
+
+.rai-flow__node--human .rai-flow__label {
+  color: #fff;
+}
+
+.rai-flow__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.8125rem;
+  font-weight: 650;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.rai-flow__person {
+  flex: none;
+}
+
+@media (min-width: 640px) {
+  .rai-figure {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .rai-grid {
+    row-gap: 40px;
+  }
+
+  .rai-grid > .rai__opening,
+  .rai-grid > .rai-areas,
+  .rai-grid > .rai__more {
+    grid-column: 2;
+    margin-top: 0;
+  }
+
+  .rai-grid > .rai-figure {
+    grid-column: 1 / -1;
+    margin-top: 0;
+    padding: 24px;
+  }
+
+  .rai-flow {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 8px;
+    max-width: none;
+  }
+
+  .rai-flow__step {
+    flex: 1 1 0;
+    flex-direction: row;
+    min-width: 0;
+    gap: 8px;
+  }
+
+  /* Steps after the first also hold an arrow (16px + 8px gap); starting them
+   * that much wider leaves the five boxes equal. */
+  .rai-flow__step + .rai-flow__step {
+    flex-basis: 24px;
+  }
+
+  .rai-flow__arrow {
+    transform: none;
+  }
+
+  .rai-flow__node {
+    height: 100%;
+    min-height: 76px;
+  }
+}
+
+@media (forced-colors: active) {
+  .rai-flow__node--human {
+    border-width: 3px;
+  }
+
+  .rai-note__icon {
+    color: CanvasText;
+  }
+}
+
+.rai__more {
+  margin-top: 48px;
+}
+
+.rai__subhead {
+  margin: 0;
+  font-size: 1.1875rem;
+  font-weight: 650;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+/* Risk → Control: each risk named, then its control, labelled in words. The
+ * risk sits above its control on phones and beside it from 640px. */
+.risks {
+  margin: 14px 0 0;
+}
+
+.risks__pair {
+  display: grid;
+  gap: 4px;
+  padding-block: 14px;
+  border-top: 1px solid var(--hairline);
+}
+
+.risks__pair:last-child {
+  border-bottom: 1px solid var(--hairline);
+}
+
+.risks__pair dt {
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.risks__pair dd {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--body);
+}
+
+.risks__label {
+  font-weight: 650;
+  color: var(--ink);
+}
+
+@media (min-width: 640px) {
+  .risks__pair {
+    grid-template-columns: 11rem minmax(0, 1fr);
+    gap: 20px;
+    align-items: baseline;
+  }
+}
+
+/* Before real-world AI deployment: a boxed note at body size, never fine
+ * print. The heavy left rule and the heading mark it out in any colour scheme. */
+.rai-note {
+  margin-top: 40px;
+  padding: 20px 20px 22px;
+  border: 1px solid var(--line-strong);
+  border-left: 5px solid var(--navy);
+  border-radius: 10px;
+  background: var(--canvas);
+}
+
+.rai-note__title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-size: 1.1875rem;
+  font-weight: 650;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.rai-note__icon {
+  flex: none;
+  color: var(--navy);
+}
+
+.rai-note__text {
+  margin: 10px 0 0;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--ink);
+}
+
+@media (min-width: 768px) {
+  .rai-note {
+    padding: 24px 28px 26px;
+  }
+
+  .rai-note__text {
+    font-size: 1.125rem;
+  }
+}
+
 /* ---- Footer ---- */
 .site-footer {
   border-top: 1px solid var(--hairline);

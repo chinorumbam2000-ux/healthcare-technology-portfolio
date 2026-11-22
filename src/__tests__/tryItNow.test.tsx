@@ -62,7 +62,7 @@ describe('Stage 1: Try It Now', () => {
     expect(screen.getByText('The Signal Dashboard in the live prototype, on Scenario Replay Day 5.')).toBeTruthy();
   });
 
-  it('contains Stages 1–7 only: their headings, and no later section', () => {
+  it('contains Stages 1–8 only: their headings, and no later section', () => {
     expect(screen.getAllByRole('heading').map((h) => `${h.tagName}:${h.textContent}`)).toEqual([
       'H1:Signal by ProbeSyQ — Outbreak Intelligence',
       'H2:Demo access',
@@ -93,19 +93,27 @@ describe('Stage 1: Try It Now', () => {
       'H4:Responsive behavior',
       'H4:Accessibility',
       'H3:What this does not prove',
+      'H2:Responsible AI',
+      'H3:Deliberate limits on AI',
+      'H3:Human oversight',
+      'H3:Bias and fairness',
+      'H3:Privacy and security',
+      'H3:Standards and auditability',
+      'H3:Risk → Control',
+      'H3:Before real-world AI deployment',
     ]);
     // Later sections' names, as they would appear as headings (case-sensitive:
     // Stage 4's intro mentions "responsible AI" in running text).
     const text = document.body.textContent ?? '';
     for (const later of [
-      'Responsible AI', 'Business Impact', 'Roadmap', 'About Me', 'Reflection', 'AI Use Disclosure',
+      'Business Impact', 'Roadmap', 'About Me', 'Reflection', 'AI Use Disclosure',
     ]) {
       expect(text).not.toContain(later);
     }
     // "Sources:" opens Stage 3's and Stage 4's attribution lines; a Sources section would be a heading.
     expect(screen.queryByRole('heading', { name: /^Sources/ })).toBeNull();
     expect(screen.getAllByRole('region').map((r) => r.getAttribute('aria-labelledby'))).toEqual([
-      'signal-title', 'demo-access-title', 'pitch-title', 'problem-title', 'why-now-title', 'built-title', 'demo-title', 'proof-title',
+      'signal-title', 'demo-access-title', 'pitch-title', 'problem-title', 'why-now-title', 'built-title', 'demo-title', 'proof-title', 'rai-title',
     ]);
   });
 

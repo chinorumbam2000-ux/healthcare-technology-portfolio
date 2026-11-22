@@ -19,6 +19,7 @@ The Signal case study is built one approved stage at a time.
 - Stage 5, How I Built Signal: the intended architecture, the technology stack and the key design decisions.
 - Stage 6, See Signal in Action: the narrated walkthrough, embedded from YouTube (privacy-enhanced domain, no autoplay).
 - Stage 7, Proof It Works: software-test and release-check evidence, what testing changed, and what it does not prove.
+- Stage 8, Responsible AI: where automation stops, the human-review flow, risks and controls, and what real-world AI deployment would require.
 
 ## Structure
 
@@ -39,6 +40,7 @@ src/
       HowIBuilt.tsx       Stage 5
       SeeItInAction.tsx   Stage 6
       ProofItWorks.tsx    Stage 7
+      ResponsibleAI.tsx   Stage 8
   __tests__/
 ```
 

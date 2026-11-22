@@ -2,6 +2,7 @@ import HowIBuilt from './HowIBuilt';
 import Pitch from './Pitch';
 import Problem from './Problem';
 import ProofItWorks from './ProofItWorks';
+import ResponsibleAI from './ResponsibleAI';
 import SeeItInAction from './SeeItInAction';
 import TryItNow from './TryItNow';
 import WhyNow from './WhyNow';
@@ -20,6 +21,7 @@ export default function SignalCaseStudy() {
       <HowIBuilt />
       <SeeItInAction />
       <ProofItWorks />
+      <ResponsibleAI />
     </>
   );
 }

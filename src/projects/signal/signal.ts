@@ -323,6 +323,73 @@ export const PROOF = {
   },
 } as const;
 
+/**
+ * Stage 8, Responsible AI. Keeps three things apart: the current prototype
+ * (transparent statistical signal logic such as CUSUM and EWMA, synthetic data,
+ * human review; no model-based detection), future AI capabilities, and what a
+ * real-world deployment would require.
+ */
+export const RESPONSIBLE_AI = {
+  heading: 'Responsible AI',
+  lead: 'For Signal, responsible AI starts with knowing where automation should stop.',
+  intro:
+    'Signal is designed to support surveillance and investigation, not replace professional judgment. The current prototype keeps its core surveillance logic interpretable and reviewable, uses synthetic data for public demonstration, and deliberately avoids autonomous diagnosis or autonomous public-health action. Any future AI capability would need to operate within the same human-reviewed, auditable and privacy-conscious framework.',
+  areas: [
+    {
+      title: 'Deliberate limits on AI',
+      text: 'Signal does not depend on a black-box model to declare that an outbreak is occurring. The current prototype uses transparent surveillance logic and presents signals for human review. AI can support future pattern recognition, prioritization and analysis, but it should not independently make clinical or public-health decisions.',
+    },
+    {
+      title: 'Human oversight',
+      text: 'Surveillance signals are treated as prompts for investigation rather than final conclusions. A human user remains responsible for reviewing the supporting evidence, understanding the context, and deciding whether escalation or further investigation is appropriate.',
+    },
+    {
+      title: 'Bias and fairness',
+      text: 'Outbreak surveillance can be affected by differences in testing access, healthcare utilization, geography, reporting practices and population coverage. Signal therefore should not assume that higher or lower observed activity represents the full underlying disease burden. Future model-based features would require subgroup evaluation, monitoring for unequal performance, and review of how data availability may shape results.',
+    },
+    {
+      title: 'Privacy and security',
+      text: 'The public prototype uses synthetic data and contains no real patient information. In a real deployment, access control, encryption, secure authentication, audit logging, minimum-necessary data use, and organizational privacy and security requirements would be essential before processing protected health information.',
+    },
+    {
+      title: 'Standards and auditability',
+      text: 'Signal’s intended architecture uses standards such as HL7 v2, FHIR and LOINC to support consistent and traceable data exchange. Surveillance signals should remain explainable, with enough supporting information for users to understand why a signal was generated and to review the data and logic behind it.',
+    },
+  ],
+  flow: {
+    title: 'Human-reviewed surveillance by design',
+    steps: [
+      { label: 'Laboratory data', human: false },
+      { label: 'Transparent surveillance logic', human: false },
+      { label: 'Signal generated', human: false },
+      { label: 'Human review', human: true },
+      { label: 'Investigation / public-health decision', human: true },
+    ],
+  },
+  risks: {
+    heading: 'Risk → Control',
+    pairs: [
+      { risk: 'Automation risk', control: 'Human review before escalation or action.' },
+      {
+        risk: 'Bias risk',
+        control: 'Subgroup evaluation, data-quality review and ongoing performance monitoring before future AI deployment.',
+      },
+      {
+        risk: 'Privacy risk',
+        control: 'Synthetic data in the public prototype; minimum-necessary data, access controls, encryption and audit logging in any real deployment.',
+      },
+      {
+        risk: 'Explainability risk',
+        control: 'Transparent signal logic and visible supporting evidence rather than unexplained automated conclusions.',
+      },
+    ],
+  },
+  boundary: {
+    heading: 'Before real-world AI deployment',
+    text: 'Any AI capability used with real healthcare or public-health data would require formal validation, governance approval, security and privacy review, bias and performance evaluation, ongoing monitoring, and clearly defined human accountability before operational use.',
+  },
+} as const;
+
 /** The hero screenshot: a real capture of the live prototype. */
 export const DASHBOARD_SHOT = {
   width: 2880,
