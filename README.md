@@ -17,6 +17,7 @@ The Signal case study is built one approved stage at a time.
 - Stage 3, The Problem Worth Solving: the evidence (ASTP/ONC, 2024), a bar chart, the stakeholders and the motivation.
 - Stage 4, Why Now: the evidence, today's surveillance landscape, where Signal fits, and AI governance.
 - Stage 5, How I Built Signal: the intended architecture, the technology stack and the key design decisions.
+- Stage 6, See Signal in Action: the narrated walkthrough, embedded from YouTube (privacy-enhanced domain, no autoplay).
 
 ## Structure
 
@@ -35,6 +36,7 @@ src/
       Problem.tsx         Stage 3
       WhyNow.tsx          Stage 4
       HowIBuilt.tsx       Stage 5
+      SeeItInAction.tsx   Stage 6
   __tests__/
 ```
 

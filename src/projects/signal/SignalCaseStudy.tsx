@@ -1,6 +1,7 @@
 import HowIBuilt from './HowIBuilt';
 import Pitch from './Pitch';
 import Problem from './Problem';
+import SeeItInAction from './SeeItInAction';
 import TryItNow from './TryItNow';
 import WhyNow from './WhyNow';
 
@@ -16,6 +17,7 @@ export default function SignalCaseStudy() {
       <Problem />
       <WhyNow />
       <HowIBuilt />
+      <SeeItInAction />
     </>
   );
 }

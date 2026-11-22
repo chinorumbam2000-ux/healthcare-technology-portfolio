@@ -218,6 +218,27 @@ export const BUILT = {
   },
 } as const;
 
+/**
+ * Stage 6, See Signal in Action: the narrated walkthrough of the public
+ * prototype (synthetic data), embedded from YouTube's privacy-enhanced domain.
+ */
+const DEMO_VIDEO_ID = 'HfU7U67jeiQ';
+
+export const DEMO = {
+  heading: 'See Signal in Action',
+  intro:
+    'Watch a walkthrough of the working Signal prototype, from surveillance monitoring and signal investigation to analytics, geographic intelligence, and the intended interoperability architecture.',
+  video: {
+    id: DEMO_VIDEO_ID,
+    title: 'Signal by ProbeSyQ prototype walkthrough',
+    /** No autoplay, loop or mute parameters: the viewer starts it, with YouTube's own controls and captions. */
+    embedUrl: `https://www.youtube-nocookie.com/embed/${DEMO_VIDEO_ID}?rel=0`,
+    watchUrl: `https://youtu.be/${DEMO_VIDEO_ID}`,
+  },
+  labels: 'Working prototype · Synthetic data · Narrated & captioned demo',
+  fallback: 'Watch on YouTube',
+} as const;
+
 /** The hero screenshot: a real capture of the live prototype. */
 export const DASHBOARD_SHOT = {
   width: 2880,

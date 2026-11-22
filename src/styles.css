@@ -1094,6 +1094,100 @@ a:focus-visible {
   color: var(--ink);
 }
 
+/* ---- Stage 6: See Signal in Action ----
+ * From 1024px: heading | intro on the first row, then the video across the
+ * full content width. */
+.demo__intro {
+  max-width: 42rem;
+  margin: 20px 0 0;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--body);
+}
+
+@media (min-width: 768px) {
+  .demo__intro {
+    font-size: 1.25rem;
+  }
+}
+
+.demo__media {
+  margin-top: 28px;
+}
+
+@media (min-width: 1024px) {
+  .demo-grid {
+    row-gap: 40px;
+  }
+
+  .demo-grid > .demo__intro {
+    grid-column: 2;
+    margin-top: 0;
+  }
+
+  .demo-grid > .demo__media {
+    grid-column: 1 / -1;
+    margin-top: 0;
+  }
+}
+
+/* A 16:9 frame that scales with its column; the iframe fills it. */
+.demo__frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  background: var(--ink);
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.06),
+    0 28px 56px -28px rgba(15, 23, 42, 0.3);
+}
+
+.demo__frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* The supporting line and the fallback link: one quiet row under the video. */
+.demo__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px 24px;
+  margin-top: 14px;
+}
+
+.demo__labels {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.demo__fallback {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.demo__fallback:hover {
+  color: var(--blue-hover);
+}
+
+.demo__fallback .external-icon {
+  width: 14px;
+  height: 14px;
+}
+
 /* ---- Footer ---- */
 .site-footer {
   border-top: 1px solid var(--hairline);
