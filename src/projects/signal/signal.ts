@@ -239,6 +239,90 @@ export const DEMO = {
   fallback: 'Watch on YouTube',
 } as const;
 
+/**
+ * Stage 7, Proof It Works: software-reliability evidence only, never clinical
+ * performance. Each claim is backed by the Signal repository at its deployed
+ * commit: 933 of 933 Vitest tests passing across 68 files; the GitHub Pages
+ * workflow runs the tests and `tsc -b && vite build` before each deployment;
+ * the route guard (/signin, return to the deep link) and SMART-route tests;
+ * and the landing-page commits that removed the duplicate hero calls to
+ * action and broadened the Multi-profile monitoring wording. The browser
+ * checks (axe-core scans, keyboard, reduced motion, 375–1440 px) were run
+ * against the live deployment at each release; no lifetime total is claimed.
+ *
+ * In `changes`, text between backticks is shown as code.
+ */
+export const PROOF = {
+  heading: 'Proof It Works',
+  lead: 'Signal was tested as working software across functionality, routing, accessibility, responsive behavior, and production deployment—not as a clinically validated surveillance system.',
+  intro:
+    'Testing focused on whether the prototype behaves reliably as software: whether users can access the application, navigate surveillance workflows, review signals, use protected routes, interact with SMART-related routes, view the interface across screen sizes, and use the application with accessible keyboard and reduced-motion behavior. The prototype was also repeatedly checked after production deployments to confirm that new changes did not break existing functionality.',
+  areas: [
+    {
+      title: 'Automated frontend testing',
+      metric: '933 / 933 tests passing',
+      text: 'Signal’s frontend test suite verifies application behavior, routing, surveillance views, authentication flows, component behavior, and regression-sensitive functionality.',
+    },
+    {
+      title: 'Production browser validation',
+      metric: 'Production smoke checks passed across deployed releases',
+      text: 'Browser-based checks were run against the live GitHub Pages deployment to verify navigation, sign-in, protected-route returns, SMART routes, surveillance views, and release-critical behavior.',
+    },
+    {
+      title: 'Responsive & accessibility validation',
+      metric: '375 px → 1440 px',
+      text: 'Signal was checked across mobile, tablet, laptop, and desktop widths, with no horizontal scrolling in the tested layouts. Accessibility scans, keyboard navigation, focus behavior, and reduced-motion behavior were also tested.',
+    },
+    {
+      title: 'Build integrity',
+      metric: 'Typecheck + production build',
+      text: 'TypeScript type checking and production builds were run before release, helping catch implementation errors before deployment.',
+    },
+  ],
+  summary: {
+    title: 'Software validation summary',
+    items: [
+      { icon: 'tests', value: '933 / 933', label: 'Frontend tests passing', figure: true },
+      { icon: 'responsive', value: '375–1440 px', label: 'Responsive layouts checked', figure: true },
+      { icon: 'accessibility', value: 'WCAG accessibility checks', label: 'Keyboard, focus, reduced motion and automated scans', figure: false },
+      { icon: 'deployment', value: 'Production deployment checks', label: 'Routing, authentication, SMART routes and release smoke testing', figure: false },
+    ],
+  },
+  changes: {
+    heading: 'Testing changed the product',
+    items: [
+      {
+        title: 'Routing and sign-in',
+        text: 'Protected routes were tested so signed-out users are redirected to `/signin` and returned to their intended destination after authentication.',
+      },
+      {
+        title: 'Landing-page simplification',
+        text: 'Duplicate hero calls to action were removed after reviewing the first-screen experience, leaving navigation and Sign in in the header.',
+      },
+      {
+        title: 'Surveillance wording',
+        text: 'The Multi-profile monitoring description was broadened so the public landing page reflects multiple disease and syndrome profiles instead of implying a respiratory-only scope.',
+      },
+      {
+        title: 'Responsive behavior',
+        text: 'Layouts were repeatedly checked at 375, 768, 1024, 1280 and 1440 px to catch spacing, overflow and visual-balance issues before deployment.',
+      },
+      {
+        title: 'Accessibility',
+        text: 'Keyboard focus, heading structure, reduced-motion behavior, accessible labels and automated accessibility scans were incorporated into release checks.',
+      },
+    ],
+  },
+  limits: {
+    heading: 'What this does not prove',
+    text: 'Passing software tests does not mean Signal is clinically validated or proven to detect real-world outbreaks. The current public prototype uses synthetic data. Real deployment would require validation with appropriate healthcare and public-health partners, governance, security review, real-world data evaluation, and ongoing performance monitoring.',
+  },
+  approach: {
+    label: 'Testing approach:',
+    text: 'automated unit and component tests, TypeScript type checking, production builds, browser-based smoke checks, responsive testing, accessibility scans, keyboard testing, and production verification.',
+  },
+} as const;
+
 /** The hero screenshot: a real capture of the live prototype. */
 export const DASHBOARD_SHOT = {
   width: 2880,

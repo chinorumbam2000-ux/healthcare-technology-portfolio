@@ -18,6 +18,7 @@ The Signal case study is built one approved stage at a time.
 - Stage 4, Why Now: the evidence, today's surveillance landscape, where Signal fits, and AI governance.
 - Stage 5, How I Built Signal: the intended architecture, the technology stack and the key design decisions.
 - Stage 6, See Signal in Action: the narrated walkthrough, embedded from YouTube (privacy-enhanced domain, no autoplay).
+- Stage 7, Proof It Works: software-test and release-check evidence, what testing changed, and what it does not prove.
 
 ## Structure
 
@@ -37,6 +38,7 @@ src/
       WhyNow.tsx          Stage 4
       HowIBuilt.tsx       Stage 5
       SeeItInAction.tsx   Stage 6
+      ProofItWorks.tsx    Stage 7
   __tests__/
 ```
 
