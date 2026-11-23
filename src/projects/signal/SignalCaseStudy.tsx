@@ -7,6 +7,7 @@ import ProofItWorks from './ProofItWorks';
 import ReflectionCredits from './ReflectionCredits';
 import ResponsibleAI from './ResponsibleAI';
 import SeeItInAction from './SeeItInAction';
+import SourcesDisclosure from './SourcesDisclosure';
 import TryItNow from './TryItNow';
 import WhyNow from './WhyNow';
 
@@ -28,6 +29,7 @@ export default function SignalCaseStudy() {
       <BusinessImpact />
       <AboutMe />
       <ReflectionCredits />
+      <SourcesDisclosure />
     </>
   );
 }

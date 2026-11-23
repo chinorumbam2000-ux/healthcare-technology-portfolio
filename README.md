@@ -23,6 +23,7 @@ The Signal case study is built one approved stage at a time.
 - Stage 9, Business Impact & What’s Next: potential value, implementation cost drivers, a proposed adoption path, current limitations and the roadmap.
 - Stage 10A, About Me & This Project: about me, target roles and the skills the project demonstrates.
 - Stage 10B, What I Learned & Credits: the reflection, the project credit, and the technologies and third-party resources used.
+- Stage 10C, Sources & AI Use Disclosure: twelve APA 7 references, and how AI tools assisted the work.
 
 ## Structure
 
@@ -47,6 +48,7 @@ src/
       BusinessImpact.tsx  Stage 9
       AboutMe.tsx         Stage 10A
       ReflectionCredits.tsx  Stage 10B
+      SourcesDisclosure.tsx  Stage 10C
   __tests__/
 ```
 

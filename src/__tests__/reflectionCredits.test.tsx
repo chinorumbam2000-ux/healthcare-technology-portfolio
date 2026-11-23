@@ -17,12 +17,12 @@ describe('Stage 10B: What I Learned & Credits', () => {
     render(<App />);
   });
 
-  it('follows About Me & This Project directly: What I Learned, then Credits, as the last sections', () => {
+  it('follows About Me & This Project directly: What I Learned, then Credits, then Sources', () => {
     const about = screen.getByRole('region', { name: 'About Me & This Project' });
     expect(about.nextElementSibling).toBe(reflection());
     expect(reflection().nextElementSibling).toBe(credits());
     expect(credits().parentElement?.tagName).toBe('MAIN');
-    expect(credits().parentElement?.lastElementChild).toBe(credits());
+    expect(credits().nextElementSibling?.getAttribute('aria-labelledby')).toBe('sources-title');
   });
 
   it('gives the reflection as three paragraphs, word for word, with no bullets', () => {
@@ -85,10 +85,7 @@ describe('Stage 10B: What I Learned & Credits', () => {
     );
   });
 
-  it('adds no Sources section, references or AI Use Disclosure yet', () => {
-    expect(screen.queryByRole('heading', { name: /Sources|References|Disclosure/ })).toBeNull();
-    const page = document.body.textContent ?? '';
-    expect(page).not.toContain('AI Use Disclosure');
-    expect(page).not.toMatch(/\(\d{4}\)\.|Retrieved from|https?:\/\/doi\.org/);
+  it('keeps references out of the credits: they are in Sources', () => {
+    expect(text(credits())).not.toMatch(/\(\d{4}[a-z]?(, [A-Z][a-z]+( \d{1,2})?)?\)\.|\(n\.d\.\)|Retrieved from|https?:\/\/doi\.org/);
   });
 });

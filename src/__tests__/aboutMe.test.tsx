@@ -80,11 +80,8 @@ describe('Stage 10A: About Me & This Project', () => {
     }
   });
 
-  it('adds no Stage 10C content yet', () => {
-    const page = document.body.textContent ?? '';
-    for (const later of ['AI Use Disclosure', 'References']) {
-      expect(page).not.toContain(later);
-    }
-    expect(screen.queryByRole('heading', { name: /Sources|Disclosure|References/ })).toBeNull();
+  it('is followed, in the end, by the Stage 10C back matter', () => {
+    const sections = [...(section().parentElement?.children ?? [])].map((el) => el.getAttribute('aria-labelledby'));
+    expect(sections.slice(sections.indexOf('about-title'))).toEqual(['about-title', 'reflection-title', 'credits-title', 'sources-title', 'ai-disclosure-title']);
   });
 });

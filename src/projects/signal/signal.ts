@@ -612,6 +612,135 @@ export const CREDITS = {
   },
 } as const;
 
+/**
+ * Stage 10C, Sources: twelve references in APA 7 style, in APA order
+ * (alphabetical by author; one author's works n.d. first, then by date; the
+ * four CDC pages from 2026 take the letters a–d, assigned by title). Every
+ * URL, author, date, title, organization and report number was checked
+ * against the source: the three ASTP data briefs' suggested citations, the
+ * date each CDC page shows, the BLS page's last-modified date (2026), FHIR
+ * R4 v4.0.1 (published November 1, 2019), SMART App Launch v2.2.0, and the
+ * LOINC page (Regenstrief Institute). Each entry: author, date, the italic
+ * title, what follows the title, and the URL.
+ */
+export const SOURCES = {
+  heading: 'Sources',
+  intro:
+    'Sources used to frame the public-health problem, market landscape, interoperability approach, surveillance ecosystem, workforce context, and healthcare AI environment are listed below.',
+  references: [
+    {
+      author: 'Centers for Disease Control and Prevention.',
+      date: '(2025, December 30).',
+      title: 'About National Electronic Disease Surveillance System Base System (NBS)',
+      after: '.',
+      url: 'https://www.cdc.gov/nbs/php/about/',
+    },
+    {
+      author: 'Centers for Disease Control and Prevention.',
+      date: '(2026a, September 1).',
+      title: 'About NSSP',
+      after: '.',
+      url: 'https://www.cdc.gov/nssp/php/about/',
+    },
+    {
+      author: 'Centers for Disease Control and Prevention.',
+      date: '(2026b, October 21).',
+      title: 'About the Public Health Data Strategy',
+      after: '.',
+      url: 'https://www.cdc.gov/public-health-data-strategy/php/about/index.html',
+    },
+    {
+      author: 'Centers for Disease Control and Prevention.',
+      date: '(2026c, January 13).',
+      title: 'BioSense Platform',
+      after: '.',
+      url: 'https://www.cdc.gov/nssp/php/about/about-nssp-and-the-biosense-platform.html',
+    },
+    {
+      author: 'Centers for Disease Control and Prevention.',
+      date: '(2026d, May 27).',
+      title: 'Data modernization at CDC',
+      after: '.',
+      url: 'https://www.cdc.gov/data-modernization/php/about/index.html',
+    },
+    {
+      author: 'Chang, W., Owusu-Mensah, P., Everson, J., & Richwine, C.',
+      date: '(2025, September).',
+      title: 'Hospital trends in the use, evaluation, and governance of predictive AI, 2023–2024',
+      after: ' (Data Brief No. 80). Office of the Assistant Secretary for Technology Policy.',
+      url: 'https://healthit.gov/data/data-briefs/hospital-trends-use-evaluation-and-governance-predictive-ai-2023-2024/',
+    },
+    {
+      author: 'Health Level Seven International.',
+      date: '(n.d.).',
+      title: 'SMART App Launch: Launch and authorization',
+      after: ' (Version 2.2.0).',
+      url: 'https://www.hl7.org/fhir/smart-app-launch/app-launch.html',
+    },
+    {
+      author: 'Health Level Seven International.',
+      date: '(2019).',
+      title: 'FHIR overview',
+      after: ' (Version 4.0.1).',
+      url: 'https://www.hl7.org/fhir/R4/overview.html',
+    },
+    {
+      author: 'Owusu-Mensah, P., & Richwine, C.',
+      date: '(2025, July).',
+      title: 'Electronic public health reporting among non-federal acute care hospitals, 2024',
+      after: ' (Data Brief No. 78). Office of the Assistant Secretary for Technology Policy.',
+      url: 'https://healthit.gov/data/data-briefs/electronic-public-health-reporting-among-non-federal-acute-care-hospitals-2024/',
+    },
+    {
+      author: 'Regenstrief Institute.',
+      date: '(n.d.).',
+      title: 'About LOINC',
+      after: '.',
+      url: 'https://loinc.org/about/',
+    },
+    {
+      author: 'Strawley, C., Larson, J., & Patel, V.',
+      date: '(2024, September).',
+      title: 'Laboratory interoperability through health information exchange organizations',
+      after: ' (Data Brief No. 74). Office of the Assistant Secretary for Technology Policy.',
+      url: 'https://healthit.gov/data/data-briefs/laboratory-interoperability-through-health-information-exchange-organizations/',
+    },
+    {
+      author: 'U.S. Bureau of Labor Statistics.',
+      date: '(2026).',
+      title: 'Health information technologists and medical registrars',
+      after: '. Occupational Outlook Handbook.',
+      url: 'https://www.bls.gov/ooh/healthcare/health-information-technologists-and-medical-registrars.htm',
+    },
+  ],
+} as const;
+
+/**
+ * Stage 10C, AI Use Disclosure. AI assisted the work; the concept, problem,
+ * requirements, design, evaluation, testing and final decisions stayed with
+ * the author. Only the tools with evidence of material use are named: the
+ * project records show no other generative-AI tool.
+ */
+export const AI_DISCLOSURE = {
+  heading: 'AI Use Disclosure',
+  opening:
+    'AI tools were used as assistants during the development of Signal by ProbeSyQ. They supported selected research, refinement, coding, troubleshooting, and review tasks, while the project concept, healthcare problem, requirements, design direction, evaluation, testing, revisions, and final decisions remained my responsibility.',
+  tools: [
+    {
+      name: 'OpenAI',
+      text: 'OpenAI was used primarily as a thinking, research, and refinement assistant. It supported the review and refinement of project ideas, technical and healthcare concepts, interoperability considerations, responsible-AI principles, supporting research, presentation material, and written communication. Its outputs were evaluated, revised, and adapted to fit the project requirements and my own understanding and decisions.',
+    },
+    {
+      name: 'Claude — Anthropic',
+      text: 'Claude was used primarily as a coding and implementation assistant. It helped create and refine frontend and backend code, write and update tests, inspect the codebase, verify project behavior, troubleshoot issues, and support Git/GitHub deployment workflows. Code and changes were reviewed, tested, and approved before being committed or deployed.',
+    },
+  ],
+  distinction: {
+    heading: 'Development AI is not the same as product AI',
+    text: 'OpenAI and Claude were tools used to assist the development process. Their use does not mean that Signal’s surveillance engine is powered by a large language model. The current prototype’s core surveillance signals are generated through transparent statistical and rule-based methods and remain subject to human review. Any future AI capabilities would require separate validation, governance, security review, performance evaluation, and clearly defined human oversight before operational use.',
+  },
+} as const;
+
 /** The hero screenshot: a real capture of the live prototype. */
 export const DASHBOARD_SHOT = {
   width: 2880,
