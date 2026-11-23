@@ -21,6 +21,7 @@ The Signal case study is built one approved stage at a time.
 - Stage 7, Proof It Works: software-test and release-check evidence, what testing changed, and what it does not prove.
 - Stage 8, Responsible AI: where automation stops, the human-review flow, risks and controls, and what real-world AI deployment would require.
 - Stage 9, Business Impact & What’s Next: potential value, implementation cost drivers, a proposed adoption path, current limitations and the roadmap.
+- Stage 10A, About Me & This Project: about me, target roles and the skills the project demonstrates.
 
 ## Structure
 
@@ -43,6 +44,7 @@ src/
       ProofItWorks.tsx    Stage 7
       ResponsibleAI.tsx   Stage 8
       BusinessImpact.tsx  Stage 9
+      AboutMe.tsx         Stage 10A
   __tests__/
 ```
 

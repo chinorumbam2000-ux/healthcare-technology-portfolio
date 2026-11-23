@@ -62,7 +62,7 @@ describe('Stage 1: Try It Now', () => {
     expect(screen.getByText('The Signal Dashboard in the live prototype, on Scenario Replay Day 5.')).toBeTruthy();
   });
 
-  it('contains Stages 1–9 only: their headings, and no later section', () => {
+  it('contains Stages 1–9 and 10A only: their headings, and no later section', () => {
     expect(screen.getAllByRole('heading').map((h) => `${h.tagName}:${h.textContent}`)).toEqual([
       'H1:Signal by ProbeSyQ — Outbreak Intelligence',
       'H2:Demo access',
@@ -121,19 +121,30 @@ describe('Stage 1: Try It Now', () => {
       'H4:4. Validation framework',
       'H4:5. Security and governance',
       'H4:6. Pilot readiness',
+      'H2:About Me & This Project',
+      'H3:Target roles',
+      'H3:Skills this project demonstrates',
+      'H4:Clinical information systems',
+      'H4:Interoperability',
+      'H4:Laboratory informatics',
+      'H4:Healthcare analytics',
+      'H4:Software development',
+      'H4:Testing & accessibility',
+      'H4:Responsible AI & governance',
+      'H4:Product & systems thinking',
     ]);
     // Later sections' names, as they would appear as headings (case-sensitive:
     // Stage 4's intro mentions "responsible AI" in running text).
     const text = document.body.textContent ?? '';
     for (const later of [
-      'About Me', 'Reflection', 'AI Use Disclosure',
+      'Reflection', 'AI Use Disclosure', 'Qualifications', 'Education', 'Certifications', 'Credits',
     ]) {
       expect(text).not.toContain(later);
     }
     // "Sources:" opens Stage 3's and Stage 4's attribution lines; a Sources section would be a heading.
     expect(screen.queryByRole('heading', { name: /^Sources/ })).toBeNull();
     expect(screen.getAllByRole('region').map((r) => r.getAttribute('aria-labelledby'))).toEqual([
-      'signal-title', 'demo-access-title', 'pitch-title', 'problem-title', 'why-now-title', 'built-title', 'demo-title', 'proof-title', 'rai-title', 'biz-title',
+      'signal-title', 'demo-access-title', 'pitch-title', 'problem-title', 'why-now-title', 'built-title', 'demo-title', 'proof-title', 'rai-title', 'biz-title', 'about-title',
     ]);
   });
 

@@ -514,6 +514,57 @@ export const BUSINESS = {
     'The next milestone is not to make Signal more autonomous. It is to make the system more connected, validated, secure and useful to the people responsible for surveillance decisions.',
 } as const;
 
+/**
+ * Stage 10A, About Me & This Project: who built Signal, the roles they are
+ * pursuing (targets, not positions held, in no order), and the skills the
+ * project itself demonstrates. No résumé, education, certifications or
+ * employment history.
+ */
+export const ABOUT = {
+  heading: 'About Me & This Project',
+  lead: 'Signal brings together my background in Medical Laboratory Sciences with my growing focus on clinical information systems, interoperability, healthcare analytics, and responsible AI.',
+  about:
+    'Munyaradzi Chinorumba is a Master of Science in Healthcare Technology (MSHT) degree holder with a background in Medical Laboratory Sciences and a growing focus on clinical information systems, data interoperability, analytics, and healthcare AI. Signal by ProbeSyQ reflects that intersection by combining laboratory knowledge with healthcare technology, public-health surveillance, software development, and standards-based interoperability.',
+  roles: {
+    heading: 'Target roles',
+    items: ['Healthcare Technology Analyst', 'Clinical Informatics Analyst', 'EHR / LIS Analyst', 'Healthcare Data Analyst'],
+  },
+  skills: {
+    heading: 'Skills this project demonstrates',
+    items: [
+      {
+        title: 'Clinical information systems',
+        text: 'Understanding of laboratory and EHR workflows and how new technology can complement existing clinical systems.',
+      },
+      { title: 'Interoperability', text: 'Application of HL7 v2, FHIR and LOINC concepts to the intended exchange of laboratory information.' },
+      {
+        title: 'Laboratory informatics',
+        text: 'Use of Medical Laboratory Sciences knowledge to shape surveillance profiles, laboratory observations and outbreak-monitoring workflows.',
+      },
+      {
+        title: 'Healthcare analytics',
+        text: 'Design of surveillance metrics, trend views, signal scoring and geographic intelligence for public-health monitoring.',
+      },
+      {
+        title: 'Software development',
+        text: 'Frontend development with React and TypeScript, backend development with FastAPI and Python, and database architecture using PostgreSQL, SQLAlchemy and Alembic.',
+      },
+      {
+        title: 'Testing & accessibility',
+        text: 'Automated testing, type checking, production builds, browser validation, responsive testing, keyboard testing and accessibility checks.',
+      },
+      {
+        title: 'Responsible AI & governance',
+        text: 'Design choices that keep surveillance interpretable, human-reviewed and appropriately limited rather than relying on autonomous clinical or public-health decisions.',
+      },
+      {
+        title: 'Product & systems thinking',
+        text: 'Translation of a healthcare problem into a working prototype, architecture, adoption path, validation strategy and future roadmap.',
+      },
+    ],
+  },
+} as const;
+
 /** The hero screenshot: a real capture of the live prototype. */
 export const DASHBOARD_SHOT = {
   width: 2880,
