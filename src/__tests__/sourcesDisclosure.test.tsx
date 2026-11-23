@@ -104,7 +104,7 @@ describe('Stage 10C: Sources & AI Use Disclosure', () => {
     expect(tools).toEqual([
       [
         'OpenAI',
-        'OpenAI was used primarily as a thinking, research, and refinement assistant. It supported the review and refinement of project ideas, technical and healthcare concepts, interoperability considerations, responsible-AI principles, supporting research, presentation material, and written communication. Its outputs were evaluated, revised, and adapted to fit the project requirements and my own understanding and decisions.',
+        'OpenAI was used as a research, review, and refinement assistant. It supported selected technical and healthcare research, helped clarify interoperability and responsible-AI concepts, and assisted with refining written materials. Its outputs were reviewed, verified where appropriate, and adapted to the project requirements, while the project ideas, final decisions, and overall project direction remained my responsibility.',
       ],
       [
         'Claude — Anthropic',
