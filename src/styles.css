@@ -2284,6 +2284,144 @@ a:focus-visible {
   }
 }
 
+/* ---- Stage 10B: What I Learned & Credits ----
+ * They continue the project close after About Me: no dividing rule, and a
+ * shorter top margin, so the three read as one close with their own headings. */
+.case-section--close {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.reflection,
+.credits {
+  max-width: 42rem;
+  margin-top: 20px;
+}
+
+@media (min-width: 1024px) {
+  .reflection,
+  .credits {
+    margin-top: 0;
+  }
+}
+
+.reflection__text {
+  margin: 0;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--body);
+}
+
+.reflection__text + .reflection__text {
+  margin-top: 1.2em;
+}
+
+@media (min-width: 768px) {
+  .reflection__text {
+    font-size: 1.125rem;
+  }
+}
+
+.credits__subhead {
+  margin: 0;
+  font-size: 1.1875rem;
+  font-weight: 650;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.credits__subhead--spaced {
+  margin-top: 36px;
+}
+
+.credits__text {
+  margin: 8px 0 0;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--body);
+}
+
+/* Resources: a group name, then its items as running text separated by dots.
+ * The name sits above its items on phones and beside them from 640px. */
+.credits-list {
+  margin: 14px 0 0;
+}
+
+.credits-list__row {
+  display: grid;
+  gap: 4px;
+  padding-block: 12px;
+  border-top: 1px solid var(--hairline);
+}
+
+.credits-list__row:last-child {
+  border-bottom: 1px solid var(--hairline);
+}
+
+.credits-list__row dt {
+  font-size: 0.9375rem;
+  font-weight: 650;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.credits-list__row dd {
+  margin: 0;
+}
+
+.credits-list__items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--body);
+}
+
+.credits-list__items li {
+  display: inline;
+}
+
+/* A dot after every item but the last, then a real space (in the markup), so
+ * a line can break after any dot and the row never runs past the column. */
+.credits-list__items li:not(:last-child)::after {
+  content: '\00a0·' / '';
+  color: var(--muted);
+}
+
+@media (min-width: 640px) {
+  .credits-list__row {
+    grid-template-columns: 13rem minmax(0, 1fr);
+    gap: 20px;
+    align-items: baseline;
+  }
+}
+
+.credits__link {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.credits__link:hover {
+  color: var(--blue-hover);
+}
+
+.credits__link .external-icon {
+  width: 13px;
+  height: 13px;
+  margin-left: 2px;
+  vertical-align: -1px;
+}
+
+.credits__note {
+  margin: 16px 0 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
 /* ---- Footer ---- */
 .site-footer {
   border-top: 1px solid var(--hairline);

@@ -4,6 +4,7 @@ import HowIBuilt from './HowIBuilt';
 import Pitch from './Pitch';
 import Problem from './Problem';
 import ProofItWorks from './ProofItWorks';
+import ReflectionCredits from './ReflectionCredits';
 import ResponsibleAI from './ResponsibleAI';
 import SeeItInAction from './SeeItInAction';
 import TryItNow from './TryItNow';
@@ -26,6 +27,7 @@ export default function SignalCaseStudy() {
       <ResponsibleAI />
       <BusinessImpact />
       <AboutMe />
+      <ReflectionCredits />
     </>
   );
 }

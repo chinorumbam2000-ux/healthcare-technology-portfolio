@@ -565,6 +565,53 @@ export const ABOUT = {
   },
 } as const;
 
+/**
+ * Stage 10B, What I Learned: the reflection, three paragraphs, 208 words.
+ */
+export const REFLECTION = {
+  heading: 'What I Learned',
+  paragraphs: [
+    'Building Signal changed the way I think about healthcare technology projects. I started with a public-health problem and quickly learned that creating a useful solution requires much more than building a working interface. I had to think about clinical workflows, interoperability, data quality, surveillance logic, system architecture, privacy, accessibility, testing, and how a real organization might eventually adopt the product.',
+    'One of the most important lessons was learning to separate what a prototype can demonstrate from what would still require real-world validation. Signal can show a working surveillance workflow using synthetic data, but that does not mean it is clinically validated or ready for operational deployment. That distinction influenced many of my design decisions, including keeping the surveillance logic interpretable, maintaining human review, and being transparent about current limitations.',
+    'The project also strengthened my ability to connect my Medical Laboratory Sciences background with healthcare technology. Working across laboratory informatics, HL7 v2, FHIR, analytics, frontend and backend development, testing, and responsible AI helped me see how these areas come together in real clinical-information-system projects. Most importantly, I learned to approach technology as both a builder and a healthcare professional: asking not only whether a system can be built, but whether it is understandable, safe, useful, and realistic to implement.',
+  ],
+} as const;
+
+/**
+ * Stage 10B, Credits. An individual capstone: no teammates. The resources are
+ * the supplied list plus those actually in the repositories (Signal's
+ * package.json and backend/requirements.txt, and the map's tile layer):
+ * React Router, Tailwind CSS, Recharts, Leaflet, React Leaflet, OpenStreetMap
+ * tiles (attribution required), fhirclient, fhir.resources, Vitest and
+ * Testing Library. No web fonts, icon libraries, image assets or third-party
+ * datasets are used: every dataset, hospital and map area is synthetic, made
+ * for the project, and the portfolio's screenshot is a capture of Signal.
+ */
+export const CREDITS = {
+  heading: 'Credits',
+  project: {
+    heading: 'Project',
+    text: 'Signal by ProbeSyQ was conceived, designed, and developed as an individual Healthcare Technology capstone project by Munyaradzi Chinorumba.',
+  },
+  resources: {
+    heading: 'Technologies & third-party resources',
+    groups: [
+      { name: 'Frontend', items: ['React', 'TypeScript', 'Vite', 'React Router', 'Tailwind CSS', 'Recharts'] },
+      { name: 'Backend & data', items: ['FastAPI', 'Python', 'PostgreSQL', 'SQLAlchemy', 'Alembic', 'fhir.resources'] },
+      {
+        name: 'Standards & interoperability',
+        items: ['HL7 FHIR standards', 'HL7 v2 concepts', 'LOINC terminology', 'SMART on FHIR JavaScript client (fhirclient)'],
+      },
+      { name: 'Maps', items: ['Leaflet', 'React Leaflet', 'OpenStreetMap map tiles and data'] },
+      { name: 'Testing', items: ['Vitest', 'Testing Library'] },
+      { name: 'Hosting & delivery', items: ['GitHub', 'GitHub Actions', 'YouTube for hosting the narrated demo'] },
+    ],
+    /** OpenStreetMap's licence asks for this attribution, linked to its copyright page. */
+    osm: { item: 'OpenStreetMap map tiles and data', credit: '© OpenStreetMap contributors', href: 'https://www.openstreetmap.org/copyright' },
+    note: 'Open-source technologies and standards were used to build and demonstrate the prototype. Their inclusion here acknowledges the tools and standards that supported the project; full research references appear in the Sources section.',
+  },
+} as const;
+
 /** The hero screenshot: a real capture of the live prototype. */
 export const DASHBOARD_SHOT = {
   width: 2880,

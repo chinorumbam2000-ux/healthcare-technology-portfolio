@@ -22,6 +22,7 @@ The Signal case study is built one approved stage at a time.
 - Stage 8, Responsible AI: where automation stops, the human-review flow, risks and controls, and what real-world AI deployment would require.
 - Stage 9, Business Impact & What’s Next: potential value, implementation cost drivers, a proposed adoption path, current limitations and the roadmap.
 - Stage 10A, About Me & This Project: about me, target roles and the skills the project demonstrates.
+- Stage 10B, What I Learned & Credits: the reflection, the project credit, and the technologies and third-party resources used.
 
 ## Structure
 
@@ -45,6 +46,7 @@ src/
       ResponsibleAI.tsx   Stage 8
       BusinessImpact.tsx  Stage 9
       AboutMe.tsx         Stage 10A
+      ReflectionCredits.tsx  Stage 10B
   __tests__/
 ```
 

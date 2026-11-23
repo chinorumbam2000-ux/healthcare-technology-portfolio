@@ -9,11 +9,11 @@ describe('Stage 10A: About Me & This Project', () => {
     render(<App />);
   });
 
-  it('follows Business Impact & What’s Next as its own section, and is the last section so far', () => {
+  it('follows Business Impact & What’s Next as its own section, and is followed by What I Learned', () => {
     const biz = screen.getByRole('region', { name: 'Business Impact & What’s Next' });
     expect(biz.compareDocumentPosition(section()) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
     expect(section().parentElement?.tagName).toBe('MAIN');
-    expect(section().parentElement?.lastElementChild).toBe(section());
+    expect(section().nextElementSibling?.getAttribute('aria-labelledby')).toBe('reflection-title');
   });
 
   it('runs heading → lead → About Me → Target roles → Skills', () => {
@@ -80,11 +80,11 @@ describe('Stage 10A: About Me & This Project', () => {
     }
   });
 
-  it('adds no Stage 10B or 10C content yet', () => {
+  it('adds no Stage 10C content yet', () => {
     const page = document.body.textContent ?? '';
-    for (const later of ['Reflection', 'Credits', 'AI Use Disclosure', 'References']) {
+    for (const later of ['AI Use Disclosure', 'References']) {
       expect(page).not.toContain(later);
     }
-    expect(screen.queryByRole('heading', { name: /Sources|Reflection|Credits|Disclosure|References/ })).toBeNull();
+    expect(screen.queryByRole('heading', { name: /Sources|Disclosure|References/ })).toBeNull();
   });
 });
