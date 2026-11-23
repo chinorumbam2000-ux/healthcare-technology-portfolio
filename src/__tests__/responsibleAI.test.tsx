@@ -33,7 +33,7 @@ describe('Stage 8: Responsible AI', () => {
     expect(areas).toEqual([
       [
         'Deliberate limits on AI',
-        'Signal does not depend on a black-box model to declare that an outbreak is occurring. The current prototype uses transparent surveillance logic and presents signals for human review. AI can support future pattern recognition, prioritization and analysis, but it should not independently make clinical or public-health decisions.',
+        'Signal does not depend on a black-box model to declare that an outbreak is occurring. The current prototype uses transparent surveillance logic and presents signals for human review. AI can support future pattern recognition, prioritization and analysis, but it should not independently make clinical or public-health decisions. The current Roella assistant is rule-based and responds from Signal’s own application data; it is not powered by a large language model.',
       ],
       [
         'Human oversight',

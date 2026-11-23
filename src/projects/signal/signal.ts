@@ -35,7 +35,7 @@ export const DEMO_ACCESS = {
 export const PITCH = {
   heading: 'The Pitch',
   paragraphs: [
-    'Signal by ProbeSyQ is a vendor-agnostic, plug-and-play outbreak intelligence sidecar designed to help healthcare and public-health teams make better use of routine laboratory data for earlier disease surveillance. Rather than replacing an organization’s existing laboratory information system or electronic health record, Signal is designed to sit alongside those systems and use standards-based interoperability, including HL7 v2 and FHIR, to support the flow of laboratory data into a dedicated surveillance environment.',
+    'Signal by ProbeSyQ is a vendor-agnostic outbreak intelligence sidecar designed to integrate alongside existing clinical systems and help healthcare and public-health teams make better use of routine laboratory data for earlier disease surveillance. Rather than replacing an organization’s existing laboratory information system or electronic health record, Signal is designed to sit alongside those systems and use standards-based interoperability, including HL7 v2 and FHIR, to support the flow of laboratory data into a dedicated surveillance environment.',
     'The working prototype demonstrates how laboratory data can be organized into multiple disease and syndrome surveillance profiles, analyzed for emerging patterns, and presented through dashboards, geographic views, signal queues, and investigation workflows. The public version uses synthetic data and is not connected to a real healthcare organization or clinically validated system.',
     'I conceived, designed, and developed Signal as my Healthcare Technology capstone, drawing on my background in Medical Laboratory Sciences and graduate work in healthcare technology. My role included defining the problem and product concept, designing the surveillance and interoperability workflow, developing the working prototype, shaping the user experience, implementing and testing core functionality, and evaluating privacy, security, accessibility, and responsible-AI considerations. The project demonstrates how clinical laboratory knowledge, health information systems, interoperability, analytics, and emerging AI capabilities can be brought together to support more timely and actionable outbreak intelligence.',
   ],
@@ -160,7 +160,7 @@ export const BUILT = {
   caption:
     'Intended production architecture: Signal sits alongside existing clinical systems and uses standards-based interoperability to move laboratory data into a dedicated surveillance workflow.',
   explanation:
-    'Rather than building another laboratory information system or electronic health record, I designed Signal as a sidecar application. The goal is to preserve the systems organizations already use while adding a separate layer for surveillance, analytics, geographic intelligence, signal review, and outbreak investigation. Standards such as HL7 v2 and FHIR provide the interoperability path, while laboratory terminology such as LOINC supports consistent representation of laboratory observations.',
+    'Rather than building another laboratory information system or electronic health record, I designed Signal as a sidecar application. The goal is to preserve the systems organizations already use while adding a separate layer for surveillance, analytics, geographic intelligence, signal review, and outbreak investigation. Standards such as HL7 v2 and FHIR provide the interoperability path, while laboratory terminology such as LOINC supports consistent representation of laboratory observations. Signal’s current surveillance logic uses interpretable methods including EWMA, CUSUM, and a composite signal score rather than relying on a black-box model.',
   stack: {
     heading: 'Technology stack',
     entries: [
@@ -212,7 +212,7 @@ export const BUILT = {
       {
         title: 'Prototype first, production architecture next',
         decision: 'Prioritize a working, testable public prototype while building the backend and database architecture incrementally.',
-        why: 'This allowed the core surveillance experience and product concept to be validated before investing in production-scale integration.',
+        why: 'This allowed the core surveillance experience and product concept to be demonstrated before investing in production-scale integration.',
       },
     ],
   },
@@ -337,7 +337,7 @@ export const RESPONSIBLE_AI = {
   areas: [
     {
       title: 'Deliberate limits on AI',
-      text: 'Signal does not depend on a black-box model to declare that an outbreak is occurring. The current prototype uses transparent surveillance logic and presents signals for human review. AI can support future pattern recognition, prioritization and analysis, but it should not independently make clinical or public-health decisions.',
+      text: 'Signal does not depend on a black-box model to declare that an outbreak is occurring. The current prototype uses transparent surveillance logic and presents signals for human review. AI can support future pattern recognition, prioritization and analysis, but it should not independently make clinical or public-health decisions. The current Roella assistant is rule-based and responds from Signal’s own application data; it is not powered by a large language model.',
     },
     {
       title: 'Human oversight',
@@ -740,6 +740,22 @@ export const AI_DISCLOSURE = {
     text: 'OpenAI and Claude were tools used to assist the development process. Their use does not mean that Signal’s surveillance engine is powered by a large language model. The current prototype’s core surveillance signals are generated through transparent statistical and rule-based methods and remain subject to human review. Any future AI capabilities would require separate validation, governance, security review, performance evaluation, and clearly defined human oversight before operational use.',
   },
 } as const;
+
+/**
+ * The section navigation: each label and the id of the section heading it
+ * jumps to (the headings' existing ids).
+ */
+export const SECTION_NAV = [
+  { label: 'Pitch', target: 'pitch-title' },
+  { label: 'Problem', target: 'problem-title' },
+  { label: 'Why Now', target: 'why-now-title' },
+  { label: 'Build', target: 'built-title' },
+  { label: 'Demo', target: 'demo-title' },
+  { label: 'Proof', target: 'proof-title' },
+  { label: 'Responsible AI', target: 'rai-title' },
+  { label: 'Impact', target: 'biz-title' },
+  { label: 'About', target: 'about-title' },
+] as const;
 
 /** The hero screenshot: a real capture of the live prototype. */
 export const DASHBOARD_SHOT = {

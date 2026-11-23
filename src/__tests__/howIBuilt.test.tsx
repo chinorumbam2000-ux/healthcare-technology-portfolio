@@ -28,7 +28,7 @@ describe('Stage 5: How I Built Signal', () => {
       'Intended production architecture: Signal sits alongside existing clinical systems and uses standards-based interoperability to move laboratory data into a dedicated surveillance workflow.',
     );
     expect(s.querySelector('.built__text')?.textContent).toBe(
-      'Rather than building another laboratory information system or electronic health record, I designed Signal as a sidecar application. The goal is to preserve the systems organizations already use while adding a separate layer for surveillance, analytics, geographic intelligence, signal review, and outbreak investigation. Standards such as HL7 v2 and FHIR provide the interoperability path, while laboratory terminology such as LOINC supports consistent representation of laboratory observations.',
+      'Rather than building another laboratory information system or electronic health record, I designed Signal as a sidecar application. The goal is to preserve the systems organizations already use while adding a separate layer for surveillance, analytics, geographic intelligence, signal review, and outbreak investigation. Standards such as HL7 v2 and FHIR provide the interoperability path, while laboratory terminology such as LOINC supports consistent representation of laboratory observations. Signal’s current surveillance logic uses interpretable methods including EWMA, CUSUM, and a composite signal score rather than relying on a black-box model.',
     );
   });
 
@@ -102,7 +102,7 @@ describe('Stage 5: How I Built Signal', () => {
       [
         'Prototype first, production architecture next',
         'Decision: Prioritize a working, testable public prototype while building the backend and database architecture incrementally.',
-        'Why: This allowed the core surveillance experience and product concept to be validated before investing in production-scale integration.',
+        'Why: This allowed the core surveillance experience and product concept to be demonstrated before investing in production-scale integration.',
       ],
     ]);
   });

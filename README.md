@@ -29,7 +29,7 @@ The Signal case study is built one approved stage at a time.
 
 ```
 src/
-  App.tsx                 portfolio shell: header, main, footer
+  App.tsx                 portfolio shell: skip link, header, section navigation, main, footer
   site.ts                 site-wide identity (name, ownership lines)
   styles.css              design tokens and styles
   components/             shell parts shared by every page

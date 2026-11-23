@@ -1,6 +1,6 @@
 import { OWNER_NAME, SITE_LABEL } from '../site';
 
-/** The portfolio's identity bar. Section navigation joins it as stages are added. */
+/** The portfolio's identity bar. The section navigation sits directly below it (SectionNav). */
 export default function SiteHeader() {
   return (
     <header className="site-header">

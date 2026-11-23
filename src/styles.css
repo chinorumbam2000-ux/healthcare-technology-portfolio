@@ -114,6 +114,82 @@ a:focus-visible {
   color: var(--muted);
 }
 
+/* ---- Skip link and section navigation ----
+ * The skip link is the first stop for keyboard users and appears only while
+ * focused. The section row sits directly under the header: static and wrapped
+ * below 1024px, sticky from 1024px. Jumps are instant (no smooth scrolling),
+ * so there is no motion to reduce. */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  z-index: 30;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: var(--navy);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+.section-nav {
+  border-bottom: 1px solid var(--hairline);
+  background: #fff;
+}
+
+.section-nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 2px;
+  margin: 0 0 0 -8px;
+  padding: 6px 0;
+  list-style: none;
+}
+
+.section-nav__link {
+  display: inline-block;
+  padding: 5px 8px;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--body);
+  text-decoration: none;
+}
+
+.section-nav__link:hover {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* A jump lands with its heading clear of the page top (and, from 1024px,
+ * of the sticky row). */
+.case-section__title {
+  scroll-margin-top: 16px;
+}
+
+@media (min-width: 1024px) {
+  .section-nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+  }
+
+  .section-nav__list {
+    gap: 0 6px;
+  }
+
+  .case-section__title {
+    scroll-margin-top: 80px;
+  }
+}
+
 /* ---- Stage 1: Try It Now ---- */
 .try-it {
   padding-block: 48px 64px;

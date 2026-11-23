@@ -31,11 +31,12 @@ describe('Stage 1: Try It Now', () => {
   });
 
   it('puts the live application first and styles it as the primary action', () => {
-    // The page's first two links are Stage 1's, and Stage 1 has no others.
+    // Stage 1's two links are the first in the main content, and Stage 1 has no others
+    // (before main come only the skip link and the section navigation).
     const hero = screen.getByRole('region', { name: 'Signal by ProbeSyQ — Outbreak Intelligence' });
     const links = within(hero).getAllByRole('link');
     expect(links.map((a) => a.getAttribute('href'))).toEqual([LIVE, SOURCE]);
-    expect(screen.getAllByRole('link').slice(0, 2)).toEqual(links);
+    expect(within(screen.getByRole('main')).getAllByRole('link').slice(0, 2)).toEqual(links);
     expect(links[0].className).toContain('button--primary');
     expect(links[1].className).toContain('button--secondary');
   });
